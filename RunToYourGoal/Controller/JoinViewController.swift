@@ -8,15 +8,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
+import FirebaseAuth
 
 
 private let minimalUsernameLength = 5
-private let minimalPasswordLength = 5
+private let minimalPasswordLength = 8
+
+
+
 
 
 let minimumPWLength : Int = 5
-
 class JoinViewController: UIViewController {
 
     @IBOutlet weak var usernameOutlet: UITextField!
@@ -27,13 +29,14 @@ class JoinViewController: UIViewController {
 
     @IBOutlet weak var doSomethingOutlet: UIButton!
     
-    let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag() //디스포스백을 사용하기 위해 디스포스백 선언
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameValidOutlet.text = "ID가 너무 짧아요 !"
-        passwordValidOutlet.text = "비밀번호가 너무 짧아요 !"
+        
+        usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
+        passwordValidOutlet.text = "비밀번호는 8자 이상 입력해주세요"
 
         let usernameValid = usernameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
@@ -63,21 +66,64 @@ class JoinViewController: UIViewController {
             .disposed(by: disposeBag)
 
         doSomethingOutlet.rx.tap
-            .subscribe(onNext: { [weak self] _ in self?.showAlert() })
+            .subscribe(onNext: { self.createUser(self.usernameOutlet.text!, self.passwordOutlet.text!)})
             .disposed(by: disposeBag)
     }
+    
 
-    func showAlert() {
-        let alert = UIAlertController(
-            title: "RxExample",
-            message: "This is wonderful",
-            preferredStyle: .alert
-        )
-        let defaultAction = UIAlertAction(title: "Ok",
-                                          style: .default,
-                                          handler: nil)
-        alert.addAction(defaultAction)
-        present(alert, animated: true, completion: nil)
+    
+    func createUser(_ email : String ,  _ password : String ){
+        
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            if let error = error {
+               
+                let code = (error as NSError).code
+                
+                switch code  {
+                    
+                case 17007 : //이메일 이미 존재하는 경우
+                    
+                    self.showAlert(detail: "이미 존재하는 아이디입니다 !")
+                    
+                    
+                default :
+                    
+                    self.showAlert(detail: "에러가 있습니다.")
+                }
+                
+                print("사용자 생성 오류: \(error.localizedDescription)")
+            } else if let authResult = authResult {
+                // 사용자 생성이 성공한 경우
+                let user = authResult.user
+                print("사용자 ID: \(user.uid)")
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                
+                let mainVC = storyboard.instantiateViewController(identifier: "MainListViewController")
+                
+        
+                self.navigationController?.show(mainVC, sender: nil)
+                
+                
+                
+                
+                
+            }
+        }
+
+        
     }
+    
+    func showAlert( detail : String) {
+        
+        
+        let alertController = UIAlertController(title: "에러", message: detail , preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "확인", style: .cancel)
+        alertController.addAction(okButton)
+        present(alertController, animated: true)
+        
+    }
+
+    
 
 }

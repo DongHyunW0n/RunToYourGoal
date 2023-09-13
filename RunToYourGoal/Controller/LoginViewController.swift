@@ -1,22 +1,22 @@
 //
-//  FIrstViewController.swift
+//  LoginViewController.swift
 //  RunToYourGoal
 //
-//  Created by WonDongHyun on 2023/08/27.
+//  Created by WonDongHyun on 2023/08/28.
 //
 
 import UIKit
 
-class FIrstViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
         // Do any additional setup after loading the view.
     }
     
 
-    
     /*
     // MARK: - Navigation
 
