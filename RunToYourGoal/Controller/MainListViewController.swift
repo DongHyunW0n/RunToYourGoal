@@ -7,9 +7,15 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
+
+
 
 
 class MainListViewController: UIViewController {
+    
+    
+    var userID : String = "UID"
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,6 +30,7 @@ class MainListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("UID Is \(userID)")
 
         self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.

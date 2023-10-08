@@ -32,7 +32,7 @@
                                         <rect key="frame" x="45.666666666666686" y="314" width="244" height="300"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvh-ly-I31">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="joinbutton"/>
                                                 <connections>
@@ -40,17 +40,12 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytO-yI-fxX">
-                                                <rect key="frame" x="0.0" y="100" width="244" height="100"/>
+                                                <rect key="frame" x="0.0" y="150" width="244" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="loginbutton"/>
                                                 <connections>
                                                     <segue destination="qHb-Lq-xpm" kind="show" id="NCz-Pf-yd4"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lL8-MH-jiT">
-                                                <rect key="frame" x="0.0" y="200" width="244" height="100"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="testloginbutton"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -103,7 +98,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D6L-nh-3CH">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="D6L-nh-3CH">
                                         <rect key="frame" x="62.666666666666657" y="0.0" width="272.33333333333337" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -125,7 +120,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ylw-DN-vlA">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@gmail.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ylw-DN-vlA">
                                         <rect key="frame" x="63.333333333333343" y="0.0" width="271.66666666666663" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -730,6 +725,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sSA-4u-7T7"/>
+                    <connections>
+                        <outlet property="doSomethingOutlet" destination="qbl-cr-MfY" id="v38-eM-Zx5"/>
+                        <outlet property="passwordOutlet" destination="hZj-uQ-Isj" id="ukB-l8-Z9V"/>
+                        <outlet property="passwordValidOutlet" destination="H7h-dG-IGB" id="E6o-96-Qx2"/>
+                        <outlet property="usernameOutlet" destination="bfM-xD-99E" id="Ail-GQ-8AC"/>
+                        <outlet property="usernameValidOutlet" destination="H8n-uG-4jp" id="0sn-lX-wLE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xu5-PO-Mdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -782,13 +784,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tV8-sc-ruc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="-463"/>
+            <point key="canvasLocation" x="1108" y="-35"/>
         </scene>
     </scenes>
     <resources>
         <image name="joinbutton" width="220" height="96"/>
         <image name="loginbutton" width="220" height="96"/>
-        <image name="testloginbutton" width="220" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

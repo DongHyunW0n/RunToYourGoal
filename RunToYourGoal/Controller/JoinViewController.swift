@@ -48,7 +48,6 @@ class JoinViewController: UIViewController {
 
         let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
             .share(replay: 1)
-
         usernameValid
             .bind(to: passwordOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
@@ -89,17 +88,19 @@ class JoinViewController: UIViewController {
                     
                 default :
                     
-                    self.showAlert(detail: "에러가 있습니다.")
+                    self.showAlert(detail: "\(error.localizedDescription)")
                 }
                 
                 print("사용자 생성 오류: \(error.localizedDescription)")
             } else if let authResult = authResult {
                 // 사용자 생성이 성공한 경우
                 let user = authResult.user
-                print("사용자 ID: \(user.uid)")
+                print("계정 생성 완료 ! UID는 : \(user.uid)")
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 
-                let mainVC = storyboard.instantiateViewController(identifier: "MainListViewController")
+                guard let mainVC = storyboard.instantiateViewController(identifier: "MainListViewController") as? MainListViewController else{return}
+                mainVC.userID = user.uid
+                
                 
         
                 self.navigationController?.show(mainVC, sender: nil)
