@@ -12,12 +12,18 @@ import FirebaseAuth
 
 
 
+
 class MainListViewController: UIViewController {
     
-    
+    var ref = Database.database().reference()
+
     var userID : String = "UID"
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    var numbersOfGoals : Int?
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +39,9 @@ class MainListViewController: UIViewController {
         print("UID Is \(userID)")
 
         self.navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        
     }
     
 
@@ -49,4 +57,33 @@ class MainListViewController: UIViewController {
     }
     
 
+}
+
+extension MainListViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainListCell
+            
+        
+        
+        cell.numberLabel.text = "1"
+        cell.goalLabel.text = "다이어트"
+        cell.selectionStyle = .none
+                    
+        
+        return cell
+        
+        
+    }
+    
+    
+}
+
+extension MainListViewController : UITableViewDelegate {
+    
+    
+    
 }
