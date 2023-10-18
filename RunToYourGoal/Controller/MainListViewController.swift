@@ -47,11 +47,10 @@ class MainListViewController: UIViewController {
 
     @IBAction func addButton(_ sender: UIButton) {
         
-        
-        
-        
-        
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller = storyboard.instantiateViewController(withIdentifier: "AddGoalModalViewController")
+        self.present(viewcontroller, animated: true)
+    
         
         
     }
