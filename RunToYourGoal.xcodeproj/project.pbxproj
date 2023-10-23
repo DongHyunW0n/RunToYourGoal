@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8F10899E2AD55DE50087D297 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F10899D2AD55DE50087D297 /* MainListCell.swift */; };
-		8F11EAF52A9C33DF0065CD08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F11EAF42A9C33DF0065CD08 /* GoogleService-Info.plist */; };
 		8F11EAF82A9C340B0065CD08 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8F11EAF72A9C340B0065CD08 /* FirebaseAuth */; };
 		8F11EAFA2A9C340B0065CD08 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8F11EAF92A9C340B0065CD08 /* FirebaseDatabase */; };
 		8F11EAFC2A9C340B0065CD08 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8F11EAFB2A9C340B0065CD08 /* FirebaseFirestore */; };
@@ -23,16 +22,20 @@
 		8F4ACF5C2AE0292A000A4BBE /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4ACF5B2AE0292A000A4BBE /* GoalDetailViewController.swift */; };
 		8F4ACF5E2AE03AD5000A4BBE /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4ACF5D2AE03AD5000A4BBE /* DetailCell.swift */; };
 		8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */; };
+		8F8BF96E2AE66F0500D379C8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */; };
+		8F8BF9702AE6708200D379C8 /* GetCurrentTIme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */; };
+		8F8BF9742AE6883B00D379C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */; };
 		8FD1A45E2AD6B07000869BA0 /* AddGoalModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */; };
 		8FE1D10C2A9B243300582D66 /* FIrstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */; };
 		8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */; };
 		8FE1D11E2A9B311900582D66 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE1D11D2A9B311900582D66 /* RxCocoa */; };
 		8FE1D1202A9B311900582D66 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE1D11F2A9B311900582D66 /* RxSwift */; };
+		E22024E969F271C947A9414F /* Pods_RunToYourGoal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE854079F43218A6CA41074 /* Pods_RunToYourGoal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D4A9D0F73CE55FA4F073046 /* Pods-RunToYourGoal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunToYourGoal.release.xcconfig"; path = "Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal.release.xcconfig"; sourceTree = "<group>"; };
 		8F10899D2AD55DE50087D297 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
-		8F11EAF42A9C33DF0065CD08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F11EAFF2A9C990D0065CD08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8F38ADA72A894B8D003125F6 /* RunToYourGoal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunToYourGoal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F38ADAA2A894B8D003125F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +47,14 @@
 		8F4ACF5B2AE0292A000A4BBE /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		8F4ACF5D2AE03AD5000A4BBE /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentTIme.swift; sourceTree = "<group>"; };
+		8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../step1/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalModalViewController.swift; sourceTree = "<group>"; };
 		8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrstViewController.swift; sourceTree = "<group>"; };
 		8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		A7526BAC5F78F703EA5E87A1 /* Pods-RunToYourGoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunToYourGoal.debug.xcconfig"; path = "Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal.debug.xcconfig"; sourceTree = "<group>"; };
+		BBE854079F43218A6CA41074 /* Pods_RunToYourGoal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunToYourGoal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 				8F11EAFC2A9C340B0065CD08 /* FirebaseFirestore in Frameworks */,
 				8FE1D11E2A9B311900582D66 /* RxCocoa in Frameworks */,
 				8F11EAFE2A9C340B0065CD08 /* FirebaseStorage in Frameworks */,
+				E22024E969F271C947A9414F /* Pods_RunToYourGoal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +81,8 @@
 			children = (
 				8F38ADA92A894B8D003125F6 /* RunToYourGoal */,
 				8F38ADA82A894B8D003125F6 /* Products */,
+				D29894971CA600ACE605FBA0 /* Pods */,
+				D361B20DA4C60C941FF18B25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,7 +102,7 @@
 				8FE1D10A2A9B211A00582D66 /* Controller */,
 				8F38ADAA2A894B8D003125F6 /* AppDelegate.swift */,
 				8F38ADAC2A894B8D003125F6 /* SceneDelegate.swift */,
-				8F11EAF42A9C33DF0065CD08 /* GoogleService-Info.plist */,
+				8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */,
 				8F38ADB32A894B8D003125F6 /* Assets.xcassets */,
 				8F38ADB82A894B8D003125F6 /* Info.plist */,
 			);
@@ -103,6 +114,7 @@
 			children = (
 				8F10899D2AD55DE50087D297 /* MainListCell.swift */,
 				8F4ACF5D2AE03AD5000A4BBE /* DetailCell.swift */,
+				8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,8 +137,26 @@
 				8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */,
 				8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */,
 				8F4ACF5B2AE0292A000A4BBE /* GoalDetailViewController.swift */,
+				8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D29894971CA600ACE605FBA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7526BAC5F78F703EA5E87A1 /* Pods-RunToYourGoal.debug.xcconfig */,
+				1D4A9D0F73CE55FA4F073046 /* Pods-RunToYourGoal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D361B20DA4C60C941FF18B25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBE854079F43218A6CA41074 /* Pods_RunToYourGoal.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F38ADBB2A894B8D003125F6 /* Build configuration list for PBXNativeTarget "RunToYourGoal" */;
 			buildPhases = (
+				0B3F72E473FE37AB60B48241 /* [CP] Check Pods Manifest.lock */,
 				8F38ADA32A894B8D003125F6 /* Sources */,
 				8F38ADA42A894B8D003125F6 /* Frameworks */,
 				8F38ADA52A894B8D003125F6 /* Resources */,
+				EFA00AC94F1A1C69E3C04686 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,13 +234,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F38ADB72A894B8D003125F6 /* LaunchScreen.storyboard in Resources */,
-				8F11EAF52A9C33DF0065CD08 /* GoogleService-Info.plist in Resources */,
+				8F8BF9742AE6883B00D379C8 /* GoogleService-Info.plist in Resources */,
 				8F38ADB42A894B8D003125F6 /* Assets.xcassets in Resources */,
 				8F38ADB22A894B8D003125F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B3F72E473FE37AB60B48241 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RunToYourGoal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFA00AC94F1A1C69E3C04686 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F38ADA32A894B8D003125F6 /* Sources */ = {
@@ -224,7 +298,9 @@
 				8F10899E2AD55DE50087D297 /* MainListCell.swift in Sources */,
 				8F11EB002A9C990D0065CD08 /* LoginViewController.swift in Sources */,
 				8FD1A45E2AD6B07000869BA0 /* AddGoalModalViewController.swift in Sources */,
+				8F8BF9702AE6708200D379C8 /* GetCurrentTIme.swift in Sources */,
 				8F38ADAD2A894B8D003125F6 /* SceneDelegate.swift in Sources */,
+				8F8BF96E2AE66F0500D379C8 /* CalendarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -354,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -366,6 +442,7 @@
 		};
 		8F38ADBC2A894B8D003125F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7526BAC5F78F703EA5E87A1 /* Pods-RunToYourGoal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,11 +451,13 @@
 				DEVELOPMENT_TEAM = H5CH2SK77M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunToYourGoal/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +473,7 @@
 		};
 		8F38ADBD2A894B8D003125F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D4A9D0F73CE55FA4F073046 /* Pods-RunToYourGoal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,11 +482,13 @@
 				DEVELOPMENT_TEAM = H5CH2SK77M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunToYourGoal/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

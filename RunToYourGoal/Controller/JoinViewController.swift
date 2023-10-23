@@ -5,16 +5,25 @@
 //  Created by WonDongHyun on 2023/08/27.
 //
 
+//
+//  JoinViewController.swift
+//  RunToYourGoal
+//
+//  Created by WonDongHyun on 2023/08/27.
+//
+
 import UIKit
 import RxSwift
 import RxCocoa
 import FirebaseAuth
+import FirebaseDatabase
 
 
 private let minimalUsernameLength = 5
 private let minimalPasswordLength = 8
 
 
+let ref = Database.database().reference()
 
 
 
@@ -96,6 +105,11 @@ class JoinViewController: UIViewController {
                 // 사용자 생성이 성공한 경우
                 let user = authResult.user
                 print("계정 생성 완료 ! UID는 : \(user.uid)")
+                
+                ref.child("가입자 목록").child("\(user.uid)").child("일일 목표 리스트").setValue([])
+                print("리얼타임 데이터베이스에 가입자 목록 추가 완료")
+                
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 
                 guard let mainVC = storyboard.instantiateViewController(identifier: "MainListViewController") as? MainListViewController else{return}
@@ -103,8 +117,8 @@ class JoinViewController: UIViewController {
                 
                 
         
-                self.navigationController?.show(mainVC, sender: nil)
-                
+                self.navigationController?.pushViewController(mainVC, animated: true)
+
                 
                 
                 

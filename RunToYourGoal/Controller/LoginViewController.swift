@@ -105,7 +105,7 @@ class LoginViewController: UIViewController {
                 
                 
                 
-                self.navigationController?.show(mainVC, sender: nil)
+                self.navigationController?.pushViewController(mainVC, animated: true)
                 
                 
                 

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QKq-GU-BnY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -166,56 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sw-cu-xTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="668.81559220389806"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8oF-Tl-hWu">
-            <objects>
-                <viewController id="vKM-H6-iF6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bfb-vc-yT0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9r-dO-fUH">
-                                <rect key="frame" x="25" y="98" width="364" height="72"/>
-                                <string key="text">추가 완료 ! 
-
-또 추가할 목표가 있나요?</string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jmv-qV-AGK">
-                                <rect key="frame" x="30" y="286" width="354" height="220"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g50-AT-yZs">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="110"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="morebutton" title=""/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6M-Lp-dL2">
-                                        <rect key="frame" x="0.0" y="110" width="354" height="110"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="nomorebutton"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gCi-k8-wjU"/>
-                        <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Jmv-qV-AGK" firstAttribute="top" secondItem="k9r-dO-fUH" secondAttribute="bottom" constant="116" id="5Io-Bd-KcZ"/>
-                            <constraint firstItem="gCi-k8-wjU" firstAttribute="trailing" secondItem="Jmv-qV-AGK" secondAttribute="trailing" constant="30" id="ThL-pY-Y8x"/>
-                            <constraint firstItem="Jmv-qV-AGK" firstAttribute="leading" secondItem="gCi-k8-wjU" secondAttribute="leading" constant="30" id="ZUE-bx-lrG"/>
-                            <constraint firstItem="gCi-k8-wjU" firstAttribute="trailing" secondItem="k9r-dO-fUH" secondAttribute="trailing" constant="25" id="dAa-v0-98r"/>
-                            <constraint firstItem="k9r-dO-fUH" firstAttribute="top" secondItem="gCi-k8-wjU" secondAttribute="top" constant="50" id="evx-lX-P7q"/>
-                            <constraint firstItem="k9r-dO-fUH" firstAttribute="leading" secondItem="gCi-k8-wjU" secondAttribute="leading" constant="25" id="kmn-Va-OAP"/>
-                            <constraint firstItem="Jmv-qV-AGK" firstAttribute="centerX" secondItem="gCi-k8-wjU" secondAttribute="centerX" id="mq9-Q5-Rxl"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-NA-wk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2710" y="-35"/>
         </scene>
         <!--AddGoalModalViewController-->
         <scene sceneID="tU0-1Y-w6o">
@@ -445,7 +396,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일일 목표 리스트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiY-6f-UNj">
                                 <rect key="frame" x="20" y="58" width="374" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUu-dU-MOk">
@@ -484,9 +434,7 @@
         <image name="addgoalbutton" width="161" height="96"/>
         <image name="joinbutton" width="220" height="96"/>
         <image name="loginButton 1" width="220" height="96"/>
-        <image name="morebutton" width="165" height="96"/>
         <image name="nextbutton" width="161" height="96"/>
-        <image name="nomorebutton" width="165" height="96"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

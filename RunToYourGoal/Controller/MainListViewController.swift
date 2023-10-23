@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import RxSwift
+
 
 
 
@@ -15,12 +17,14 @@ import FirebaseAuth
 
 class MainListViewController: UIViewController {
     
-    var ref = Database.database().reference()
+    
+    let dataPath = ref.child("회원가입 유저")
+    
+
 
     var userID : String = "UID"
 
     @IBOutlet weak var tableView: UITableView!
-    
     
     var numbersOfGoals : Int?
     
@@ -37,8 +41,11 @@ class MainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("UID Is \(userID)")
-
+        print("Server time is \(getCurrentTime())")
+        
+      
         self.navigationItem.hidesBackButton = true
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -54,6 +61,7 @@ class MainListViewController: UIViewController {
         
         
     }
+
     
 
 }
@@ -82,6 +90,14 @@ extension MainListViewController : UITableViewDataSource {
 }
 
 extension MainListViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let targetView = CalendarViewController()
+        
+
+        self.navigationController?.pushViewController(targetView, animated: true)
+    }
     
     
     
