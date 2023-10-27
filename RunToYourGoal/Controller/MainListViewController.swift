@@ -18,11 +18,11 @@ import RxSwift
 class MainListViewController: UIViewController {
         
     
-    let dataPath = ref.child("회원가입 유저")
-    
+
+    let ref = Database.database().reference()
 
 
-    var userID : String = "UID"
+    var userID = Auth.auth().currentUser?.uid
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +30,7 @@ class MainListViewController: UIViewController {
     
   
 
+    var goalList: [String] = []
   
     
     
@@ -43,12 +44,16 @@ class MainListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        fetchFirebaseData()
+        
+     
+
         self.title = "일일 목표 리스트"
         let originalImage = UIImage(systemName: "person.fill")
         let prosonFillImage = originalImage?.withRenderingMode(.alwaysOriginal)
-        let rightBarButton = UIBarButtonItem(image: prosonFillImage  ,style: .plain, target: MainListViewController.self, action: #selector(rightBarButtonTapped))
+        let rightBarButton = UIBarButtonItem(image: prosonFillImage  ,style: .plain, target: self, action: #selector(rightBarButtonTapped))
         
+     
       
         self.navigationItem.hidesBackButton = true
         self.navigationItem.rightBarButtonItem = rightBarButton
@@ -74,8 +79,11 @@ class MainListViewController: UIViewController {
     }
     
     @objc func rightBarButtonTapped() {
-        // 오른쪽 바 버튼이 탭되었을 때 수행할 동작을 구현합니다.
-        print("오른쪽 바 버튼이 탭되었습니다.")
+        
+        let myPageView = MyPageViewController()
+        self.navigationController?.pushViewController(myPageView, animated: true)
+        print("우측 버튼 탭")
+    
     }
     
     func showDefaultInformation() {
@@ -84,6 +92,22 @@ class MainListViewController: UIViewController {
         print("Server time is \(getCurrentTime())")
         
     }
+    
+    func fetchFirebaseData() {
+        let goalRef = ref.child("가입자 리스트").child("\(userID ?? "UID")").child("목표 리스트")
+        goalRef.observe(.childAdded) { snapshot in
+            if let goalData = snapshot.value as? [String: Any] {
+                if let goal = goalData["목표"] as? String {
+                    self.goalList.append(goal)
+                    print("목표: \(goal)")
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
 
     
 
@@ -91,24 +115,37 @@ class MainListViewController: UIViewController {
 
 extension MainListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        if goalList.isEmpty {
+            return 1
+        }else{
+            return goalList.count
+        }
+
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
         let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainListCell
-            
         
+        if goalList.isEmpty {
+            cell.goalLabel.text = "목표가 아직 없어요"
+            cell.dateLabel.text = "오늘부터 시작 !"
+        }else{
+            cell.goalLabel.text = goalList[indexPath.row]
+
+        }
         
-        cell.numberLabel.text = "1"
-        cell.goalLabel.text = "다이어트"
-        cell.selectionStyle = .none
-                    
+
         
         return cell
         
-        
     }
-    
+ 
     
 }
 
@@ -118,7 +155,6 @@ extension MainListViewController : UITableViewDelegate {
         
         let targetView = CalendarViewController()
         
-
         self.navigationController?.pushViewController(targetView, animated: true)
     }
     

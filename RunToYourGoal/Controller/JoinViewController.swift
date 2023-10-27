@@ -122,8 +122,8 @@ class JoinViewController: UIViewController {
                 
                 
                 print("계정 생성 완료 ! UID는 : \(user.uid)")
-                
-                ref.child("가입자 리스트").child("\(self.nickNameOutlet.text ?? "닉네임")").child("uid : \(user.uid)").child("일일 목표 리스트").setValue("아직 추가된 목표 없음")
+                let nickName = self.nickNameOutlet.text
+                ref.child("가입자 리스트").child("\(user.uid)").setValue(["닉네임" : nickName])
                 print("리얼타임 데이터베이스에 가입자 목록 추가 완료")
                 
                 

@@ -15,17 +15,21 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
     // FSCalendar 인스턴스 생성
     let calendar = FSCalendar() //FS 캘린더
-    let titleLabel = UILabel()
+//    let titleLabel = UILabel()
     let todayTitleLabel = UILabel()
     let checkStackView = UIStackView()
     let didButton = UIButton()
     let didnotButton = UIButton()
+    let customTitleView = UIView()
+    let titleLabel = UILabel()
    
 
 
 
-
+    let startDate : String = ""
     
+    var didDateList : [String] = []
+    var didNotDateList : [String] = []
     
     let backgroundColor = UIColor(
         red: CGFloat(0xF8) / 255.0,
@@ -42,6 +46,22 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
 
         
+        view.addSubview(customTitleView)
+        titleLabel.text = "일일체크"
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        customTitleView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10) // 네비게이션 바 아래에 위치하도록 설정
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(30) // 적절한 높이 설정
+        }
+
+        // 타이틀 뷰에 레이블 추가
+        customTitleView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.center.equalTo(customTitleView)
+        }
+        
       
         
         // FSCalendar 설정
@@ -51,11 +71,11 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
         
         
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        titleLabel.textColor = .black
-        titleLabel.text = "일일체크 & 세부사항"
-        titleLabel.textAlignment = .center
-        
+//        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+//        titleLabel.textColor = .black
+//        titleLabel.text = "일일체크 & 세부사항"
+//        titleLabel.textAlignment = .center
+//
         
         todayTitleLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         todayTitleLabel.textColor = .black
@@ -79,24 +99,24 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         view.backgroundColor = backgroundColor
         view.addSubview(calendar)
-        view.addSubview(titleLabel)
+//        view.addSubview(titleLabel)
         view.addSubview(todayTitleLabel)
         view.addSubview(checkStackView)
         checkStackView.addArrangedSubview(didButton)
         checkStackView.addArrangedSubview(didnotButton)
 
 
-        titleLabel.snp.makeConstraints { make in
-            
-            make.top.equalToSuperview().inset(40)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(50)
-        
-            
-        }
+//        titleLabel.snp.makeConstraints { make in
+//
+//            make.top.equalToSuperview().inset(40)
+//            make.leading.trailing.equalToSuperview().inset(20)
+//            make.height.equalTo(50)
+//
+//
+//        }
         calendar.snp.makeConstraints { make in
             
-            make.top.equalTo(titleLabel.snp.bottom).offset(30)
+            make.top.equalTo(customTitleView.snp.bottom).offset(30)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(300)
         }
@@ -113,7 +133,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
             
             make.top.equalTo(todayTitleLabel.snp.bottom).offset(40)
             make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(50)
+            make.bottom.equalToSuperview().inset(80)
+            
             
         }
 

@@ -9,9 +9,11 @@ import UIKit
 
 class MainListCell: UITableViewCell {
 
-    @IBOutlet weak var numberLabel: UILabel!
     
     @IBOutlet weak var goalLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
     
     
     override func awakeFromNib() {

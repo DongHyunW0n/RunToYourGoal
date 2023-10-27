@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FirebaseDatabase
+import FirebaseAuth
 
 
 class AddGoalModalViewController: UIViewController {
@@ -20,10 +22,16 @@ class AddGoalModalViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    let ref = Database.database().reference()
+    
+    let currentUID = Auth.auth().currentUser?.uid
+    
+    let currentDate = getCurrentTime()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         
         
         descriptLabel.text = "목표가 너무 짧아요 !"
@@ -43,7 +51,32 @@ class AddGoalModalViewController: UIViewController {
         
         
         
+    @IBAction func saveButtonTabbed(_ sender: UIButton) {
         
+        let saveREF = ref.child("가입자 리스트").child("\(currentUID ?? "UID")")
+        saveREF.child("목표 리스트").childByAutoId().setValue(
+            ["목표" : "\(goalTextField.text ?? "목표 입력 오류")" ,
+             "시작일" : "\(currentDate)"
+            ]
+        
+        
+        )
+        
+        
+        
+        let alert = UIAlertController(title: "완료", message: "목표 추가 완료!", preferredStyle: .actionSheet)
+        let cancelbutton = UIAlertAction(title: "닫기", style: .cancel) { UIAlertAction in
+            
+            self.dismiss(animated: true)
+            
+        }
+        alert.addAction(cancelbutton)
+        present(alert, animated: true)
+        
+        
+   
+    }
+    
    
 
     

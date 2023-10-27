@@ -11,7 +11,7 @@ import Foundation
 func getCurrentTime() -> String {
     
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     let currentDate = dateFormatter.string(from: Date())
     
     return currentDate
