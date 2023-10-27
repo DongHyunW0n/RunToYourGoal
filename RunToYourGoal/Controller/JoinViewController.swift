@@ -104,9 +104,14 @@ class JoinViewController: UIViewController {
             } else if let authResult = authResult {
                 // 사용자 생성이 성공한 경우
                 let user = authResult.user
+                
+                let emailKey = user.email?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "defaultKey"
+
+                
+                
                 print("계정 생성 완료 ! UID는 : \(user.uid)")
                 
-                ref.child("가입자 목록").child("\(user.uid)").child("일일 목표 리스트").setValue([])
+                ref.child("가입자 목록").child("\(user.uid)").child("일일 목표 리스트").setValue("아직 추가된 목표 없음")
                 print("리얼타임 데이터베이스에 가입자 목록 추가 완료")
                 
                 
