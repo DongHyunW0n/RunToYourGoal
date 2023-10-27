@@ -83,14 +83,19 @@ class LoginViewController: UIViewController {
                 
                 switch code  {
                     
-                case 17009 : //비밀번호 틀림
-                    
-                    self.showAlert(detail: "비밀번호가 틀렸습니다 !")
-                    
+                case AuthErrorCode.wrongPassword.rawValue:
+                                self.showAlert(detail: "비밀번호가 틀렸습니다!")
+                            case AuthErrorCode.userNotFound.rawValue:
+                                self.showAlert(detail: "사용자를 찾을 수 없습니다.")
+                            case AuthErrorCode.invalidEmail.rawValue:
+                                self.showAlert(detail: "유효하지 않은 이메일 주소입니다.")
+                            case AuthErrorCode.emailAlreadyInUse.rawValue:
+                                self.showAlert(detail: "이미 사용 중인 이메일 주소입니다.")
                     
                 default :
                     
                     self.showAlert(detail: "\(error.localizedDescription)")
+                    print("error code is \(code)")
                 }
                 
                 print("사용자 생성 오류: \(error.localizedDescription)")

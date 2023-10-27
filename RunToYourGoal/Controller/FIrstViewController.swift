@@ -27,4 +27,21 @@ class FIrstViewController: UIViewController {
     }
     */
 
+    @IBAction func signUpTabbed(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signUpView = storyboard.instantiateViewController(identifier: "JoinViewController")
+        self.navigationController?.pushViewController(signUpView, animated: true)
+        
+        
+        
+    }
+    @IBAction func signInTabbed(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signInView = storyboard.instantiateViewController(identifier: "LoginViewController")
+        self.navigationController?.pushViewController(signInView, animated: true)
+        
+        
+    }
 }

@@ -37,7 +37,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="joinbutton"/>
                                                 <connections>
-                                                    <segue destination="b1J-1R-m39" kind="show" id="RBT-Dt-h82"/>
+                                                    <action selector="signUpTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntT-Fu-NDQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytO-yI-fxX">
@@ -45,7 +45,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="loginButton 1"/>
                                                 <connections>
-                                                    <segue destination="qHb-Lq-xpm" kind="show" id="NCz-Pf-yd4"/>
+                                                    <action selector="signInTabbed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dBC-bU-QlY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -69,29 +69,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="-36"/>
+            <point key="canvasLocation" x="-259" y="-36"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="Csc-71-fR5">
             <objects>
-                <viewController id="b1J-1R-m39" customClass="JoinViewController" customModule="RunToYourGoal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinViewController" id="b1J-1R-m39" customClass="JoinViewController" customModule="RunToYourGoal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeQ-PL-jga">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정을 만들어 봅시다 !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az5-8b-BC7">
-                                <rect key="frame" x="20" y="132" width="374" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az5-8b-BC7">
+                                <rect key="frame" x="20" y="88" width="374" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.94074213500000003" green="0.50212513619999999" blue="0.75484049850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMO-ig-Fau">
-                                <rect key="frame" x="165.5" y="435.5" width="83" height="34.5"/>
+                                <rect key="frame" x="165.5" y="391.5" width="83" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="가입하기"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-6f-OlU">
-                                <rect key="frame" x="20" y="319.5" width="374" height="34"/>
+                                <rect key="frame" x="20" y="275.5" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tit-Ub-ddm">
                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="34"/>
@@ -107,13 +107,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6q-AY-0eS">
-                                <rect key="frame" x="177" y="287.5" width="60.5" height="12"/>
+                                <rect key="frame" x="177" y="243.5" width="60.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Pkl-bz-465">
-                                <rect key="frame" x="20" y="243.5" width="374" height="34"/>
+                                <rect key="frame" x="20" y="199.5" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mef-ov-Cok">
                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="34"/>
@@ -129,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY8-H2-w7U">
-                                <rect key="frame" x="177" y="363.5" width="60.5" height="12"/>
+                                <rect key="frame" x="177" y="319.5" width="60.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -166,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sw-cu-xTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="668.81559220389806"/>
+            <point key="canvasLocation" x="-259" y="617"/>
         </scene>
         <!--AddGoalModalViewController-->
         <scene sceneID="tU0-1Y-w6o">
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5s-li-H33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="-36"/>
+            <point key="canvasLocation" x="1354" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zMf-QT-F7M">
@@ -243,29 +243,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0p-r9-iik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="-35"/>
+            <point key="canvasLocation" x="-1055" y="-35"/>
         </scene>
-        <!--Login View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="mFa-7y-NM4">
             <objects>
-                <viewController id="qHb-Lq-xpm" customClass="LoginViewController" customModule="RunToYourGoal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="qHb-Lq-xpm" customClass="LoginViewController" customModule="RunToYourGoal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ews-mU-5xV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돌아오신걸 환영합니다 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rse-YQ-3EB">
-                                <rect key="frame" x="20" y="132" width="374" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rse-YQ-3EB">
+                                <rect key="frame" x="20" y="88" width="374" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.94074213500000003" green="0.50212513619999999" blue="0.75484049850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-cr-MfY">
-                                <rect key="frame" x="173" y="435.5" width="68.5" height="34.5"/>
+                                <rect key="frame" x="173" y="391.5" width="68.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그인"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="k2I-Pi-nO9">
-                                <rect key="frame" x="20" y="319.5" width="374" height="34"/>
+                                <rect key="frame" x="20" y="275.5" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-NZ-KEs">
                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="34"/>
@@ -281,13 +281,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-uG-4jp">
-                                <rect key="frame" x="177" y="287.5" width="60.5" height="12"/>
+                                <rect key="frame" x="177" y="243.5" width="60.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="wPA-Jq-bAx">
-                                <rect key="frame" x="20" y="243.5" width="374" height="34"/>
+                                <rect key="frame" x="20" y="199.5" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV4-FO-E2e">
                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="34"/>
@@ -303,7 +303,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7h-dG-IGB">
-                                <rect key="frame" x="177" y="363.5" width="60.5" height="12"/>
+                                <rect key="frame" x="177" y="319.5" width="60.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xu5-PO-Mdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362" y="-711"/>
+            <point key="canvasLocation" x="-259" y="-687"/>
         </scene>
         <!--Main List View Controller-->
         <scene sceneID="6Nu-Bs-vTf">
@@ -427,11 +427,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tV8-sc-ruc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="-35.467980295566505"/>
+            <point key="canvasLocation" x="577" y="-36"/>
         </scene>
     </scenes>
     <resources>
-        <image name="addgoalbutton" width="161" height="96"/>
+        <image name="addgoalbutton" width="165" height="96"/>
         <image name="joinbutton" width="220" height="96"/>
         <image name="loginButton 1" width="220" height="96"/>
         <image name="nextbutton" width="161" height="96"/>
