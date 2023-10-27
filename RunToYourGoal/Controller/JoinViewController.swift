@@ -20,7 +20,9 @@ import FirebaseDatabase
 
 
 private let minimalUsernameLength = 5
-private let minimalPasswordLength = 8
+private let minimalPasswordLength = 6
+private let minimalNicknameLength = 2
+
 
 
 let ref = Database.database().reference()
@@ -31,21 +33,21 @@ let minimumPWLength : Int = 5
 class JoinViewController: UIViewController {
 
     @IBOutlet weak var usernameOutlet: UITextField!
-    @IBOutlet weak var usernameValidOutlet: UILabel!
-
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var passwordValidOutlet: UILabel!
 
+    @IBOutlet weak var nickNameOutlet: UITextField!
     @IBOutlet weak var doSomethingOutlet: UIButton!
     
+    @IBOutlet weak var nickNameValidOutlet: UILabel!
     let disposeBag = DisposeBag() //디스포스백을 사용하기 위해 디스포스백 선언
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
-        passwordValidOutlet.text = "비밀번호는 8자 이상 입력해주세요"
+        passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
+        nickNameValidOutlet.text = "닉네임은 2글자 이상 입력해주세요"
 
         let usernameValid = usernameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
@@ -54,25 +56,35 @@ class JoinViewController: UIViewController {
         let passwordValid = passwordOutlet.rx.text.orEmpty
             .map { $0.count >= minimalPasswordLength }
             .share(replay: 1)
+        
+        let nickNameValid = nickNameOutlet.rx.text.orEmpty
+            .map { $0.count >= minimalNicknameLength }
+            .share(replay: 1)
 
-        let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
+        let everythingValid = Observable.combineLatest(usernameValid, passwordValid , nickNameValid) { $0 && $1 && $2 }
             .share(replay: 1)
         usernameValid
             .bind(to: passwordOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
-
-        usernameValid
-            .bind(to: usernameValidOutlet.rx.isHidden)
-            .disposed(by: disposeBag)
-
+        
+        
         passwordValid
             .bind(to: passwordValidOutlet.rx.isHidden)
             .disposed(by: disposeBag)
-
+        
+        passwordValid
+            .bind(to: nickNameOutlet.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        nickNameValid
+            .bind(to: nickNameValidOutlet.rx.isHidden)
+            .disposed(by: disposeBag)
+ 
         everythingValid
             .bind(to: doSomethingOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
-
+        
+  
         doSomethingOutlet.rx.tap
             .subscribe(onNext: { self.createUser(self.usernameOutlet.text!, self.passwordOutlet.text!)})
             .disposed(by: disposeBag)
@@ -111,7 +123,7 @@ class JoinViewController: UIViewController {
                 
                 print("계정 생성 완료 ! UID는 : \(user.uid)")
                 
-                ref.child("가입자 목록").child("\(user.uid)").child("일일 목표 리스트").setValue("아직 추가된 목표 없음")
+                ref.child("가입자 리스트").child("\(self.nickNameOutlet.text ?? "닉네임")").child("uid : \(user.uid)").child("일일 목표 리스트").setValue("아직 추가된 목표 없음")
                 print("리얼타임 데이터베이스에 가입자 목록 추가 완료")
                 
                 

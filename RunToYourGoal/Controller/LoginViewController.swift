@@ -11,7 +11,7 @@ import RxCocoa
 import FirebaseAuth
 
 private let minimalUsernameLength = 5
-private let minimalPasswordLength = 8
+private let minimalPasswordLength = 6
 
 
 
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         
         
         usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
-        passwordValidOutlet.text = "비밀번호는 8자 이상 입력해주세요"
+        passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
         
         let usernameValid = usernameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }

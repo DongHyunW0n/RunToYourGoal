@@ -28,6 +28,9 @@ class MainListViewController: UIViewController {
     
     var numbersOfGoals : Int?
     
+  
+
+  
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,9 +44,16 @@ class MainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        self.title = "일일 목표 리스트"
+        let originalImage = UIImage(systemName: "person.fill")
+        let prosonFillImage = originalImage?.withRenderingMode(.alwaysOriginal)
+        let rightBarButton = UIBarButtonItem(image: prosonFillImage  ,style: .plain, target: MainListViewController.self, action: #selector(rightBarButtonTapped))
         
       
         self.navigationItem.hidesBackButton = true
+        self.navigationItem.rightBarButtonItem = rightBarButton
+
+        
         
         self.showDefaultInformation()
         
@@ -61,6 +71,11 @@ class MainListViewController: UIViewController {
     
         
         
+    }
+    
+    @objc func rightBarButtonTapped() {
+        // 오른쪽 바 버튼이 탭되었을 때 수행할 동작을 구현합니다.
+        print("오른쪽 바 버튼이 탭되었습니다.")
     }
     
     func showDefaultInformation() {
