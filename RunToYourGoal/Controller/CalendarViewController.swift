@@ -88,7 +88,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
         titleLabel.snp.makeConstraints { make in
             
-            make.top.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(40)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(50)
         

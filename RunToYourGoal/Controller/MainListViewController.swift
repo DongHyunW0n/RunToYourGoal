@@ -16,7 +16,7 @@ import RxSwift
 
 
 class MainListViewController: UIViewController {
-    
+        
     
     let dataPath = ref.child("회원가입 유저")
     
@@ -40,11 +40,12 @@ class MainListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("UID Is \(userID)")
-        print("Server time is \(getCurrentTime())")
+       
         
       
         self.navigationItem.hidesBackButton = true
+        
+        self.showDefaultInformation()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -59,6 +60,13 @@ class MainListViewController: UIViewController {
         self.present(viewcontroller, animated: true)
     
         
+        
+    }
+    
+    func showDefaultInformation() {
+        
+        print("UID Is \(userID)")
+        print("Server time is \(getCurrentTime())")
         
     }
 
@@ -98,6 +106,7 @@ extension MainListViewController : UITableViewDelegate {
 
         self.navigationController?.pushViewController(targetView, animated: true)
     }
+    
     
     
     

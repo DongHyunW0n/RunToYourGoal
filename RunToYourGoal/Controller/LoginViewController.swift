@@ -66,73 +66,42 @@ class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         doSomethingOutlet.rx.tap
-            .subscribe(onNext: { self.login(self.usernameOutlet.text!, self.passwordOutlet.text!)})
+            .subscribe(onNext: { self.loginUser(email: self.usernameOutlet.text!, password: self.passwordOutlet.text!)})
             .disposed(by: disposeBag)
     }
     
     
-    
-    func login(_ email : String ,  _ password : String ){
-        
-        
+    func loginUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-            if let error = error {
-                
-                let code = (error as NSError).code
-                
-                
-                switch code  {
-                    
-                case AuthErrorCode.wrongPassword.rawValue:
-                                self.showAlert(detail: "비밀번호가 틀렸습니다!")
-                            case AuthErrorCode.userNotFound.rawValue:
-                                self.showAlert(detail: "사용자를 찾을 수 없습니다.")
-                            case AuthErrorCode.invalidEmail.rawValue:
-                                self.showAlert(detail: "유효하지 않은 이메일 주소입니다.")
-                            case AuthErrorCode.emailAlreadyInUse.rawValue:
-                                self.showAlert(detail: "이미 사용 중인 이메일 주소입니다.")
-                    
-                default :
-                    
-                    self.showAlert(detail: "\(error.localizedDescription)")
-                    print("error code is \(code)")
+            if authResult != nil {
+                print("로그인 성공")
+                self.moveToMainView(uid: authResult?.user.uid ?? "UID")
+            } else {
+                let errorCode = (error! as NSError).code
+                switch errorCode {
+                case 17010:
+                    self.showAlert(detail: "비밀번호 오류 횟수 초과로 계정이 잠겼습니다. nexon320@gmail.com 으로 계정을 적어서 보내주세요.")
+                case 17999:
+                    self.showAlert(detail: "아이디나 비밀번호를 확인해주세요.")
+                default:
+                    print("다른 로그인 오류 코드: \(errorCode)")
                 }
-                
-                print("사용자 생성 오류: \(error.localizedDescription)")
-            } else if let authResult = authResult {
-                // 사용자 생성이 성공한 경우
-                let user = authResult.user
-                print("로그인 완료 ! UID는 : \(user.uid)")
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                
-                guard let mainVC = storyboard.instantiateViewController(identifier: "MainListViewController") as? MainListViewController else{return}
-                mainVC.userID = user.uid
-                
-                
-                
-                self.navigationController?.pushViewController(mainVC, animated: true)
-                
-                
-                
-                
-                
             }
         }
-        
-        
     }
     
-    func showAlert( detail : String) {
-        
-        
-        let alertController = UIAlertController(title: "에러", message: detail , preferredStyle: UIAlertController.Style.alert)
+    func showAlert(detail: String) {
+        let alertController = UIAlertController(title: "에러", message: detail, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "확인", style: .cancel)
         alertController.addAction(okButton)
         present(alertController, animated: true)
-        
     }
     
-    
-    
+    func moveToMainView(uid: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainListViewController = storyboard.instantiateViewController(identifier: "MainListViewController") as! MainListViewController
+        mainListViewController.userID = uid
+        self.navigationController?.pushViewController(mainListViewController, animated: true)
+        print("메인 화면으로 이동합니다.")
+    }
 }
-
