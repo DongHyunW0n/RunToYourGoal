@@ -34,6 +34,7 @@ class MyPageViewController : UIViewController{
             label.text = "닉네임입니다"
             label.font = UIFont.systemFont(ofSize: 20)
             label.textColor = UIColor.black
+            label.textAlignment = .center
             label.adjustsFontSizeToFitWidth = true // 텍스트 크기를 조절하도록 설정
             label.minimumScaleFactor = 0.5 // 텍스트 크기의 최소 축소 비율 설정
             
@@ -47,33 +48,6 @@ class MyPageViewController : UIViewController{
 
         navigationController?.navigationBar.tintColor = .black
         
-        let topStackView : UIStackView = {
-            
-            let view = UIStackView()
-            view.axis = .horizontal
-            view.spacing = 0
-            view.distribution = .fill
-            view.alignment = .center
-            
-            return view
-            
-        }()
-        
-        
-        
-        
-        let nickNameTitle : UILabel = {
-            
-            let label = UILabel()
-            label.text = "닉네임 :"
-            label.font = UIFont.systemFont(ofSize: 20)
-            label.textColor = UIColor.black
-            label.textAlignment = .center
-            return label
-
-        }()
-        
-    
         
         let reportButton : UIButton = {
             
@@ -104,10 +78,10 @@ class MyPageViewController : UIViewController{
             return button
         }()
         
-        topStackView.addArrangedSubview(nickNameTitle)
-        topStackView.addArrangedSubview(nickNameLabel)
+//        topStackView.addArrangedSubview(nickNameTitle)
+//        topStackView.addArrangedSubview(nickNameLabel)
         
-        view.addSubview(topStackView)
+        view.addSubview(nickNameLabel)
         view.addSubview(logoutButton)
         view.addSubview(reportButton)
 
@@ -115,15 +89,16 @@ class MyPageViewController : UIViewController{
         
         
 
-        topStackView.snp.makeConstraints { make in
+        nickNameLabel.snp.makeConstraints { make in
 
             make.top.equalToSuperview().offset(80)
-            make.leading.trailing.equalToSuperview().inset(100)
+            make.leading.trailing.equalToSuperview().inset(20)
+            
         }
         
         logoutButton.snp.makeConstraints { make in
             
-            make.top.equalTo(topStackView.snp.bottom).offset(120)
+            make.top.equalTo(nickNameLabel.snp.bottom).offset(120)
             
             make.leading.trailing.equalToSuperview().inset(120)
             
@@ -148,7 +123,7 @@ class MyPageViewController : UIViewController{
             if let value = snapshot.value as? [String: Any] {
                 let nickName = value["닉네임"] as? String ?? "닉네임"
                 print("nickname is \(nickName)")
-                nickNameLabel.text = nickName
+                nickNameLabel.text = "\(nickName)"
             }
         }
         
@@ -168,7 +143,17 @@ class MyPageViewController : UIViewController{
         do{
             try firebaseAuth.signOut()
             print("로그아웃 성공")
-            self.navigationController?.popToRootViewController(animated: true)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+            let firstVC = storyboard.instantiateViewController(identifier: "SplashViewController")
+
+               // 탐색 컨트롤러 초기화 및 루트 뷰 컨트롤러 설정
+               let navController = UINavigationController(rootViewController: firstVC)
+
+               // 애니메이션 효과 없이 Fullscreen으로 표시
+               navController.modalPresentationStyle = .fullScreen
+               self.present(navController, animated: false, completion: nil)
 
             
         }catch let sighOutError as NSError{
@@ -225,7 +210,6 @@ struct MyPageViewControllerWrapper: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: MyPageViewController, context: Context) {
-        // 뷰 컨트롤러를 업데이트해야 하는 경우 업데이트합니다.
     }
 }
 

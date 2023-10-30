@@ -31,6 +31,12 @@ let ref = Database.database().reference()
 
 let minimumPWLength : Int = 5
 class JoinViewController: UIViewController {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+         self.view.endEditing(true)
+
+   }
 
     @IBOutlet weak var usernameOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
@@ -44,6 +50,10 @@ class JoinViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        
+        doSomethingOutlet.isExclusiveTouch = true
 
         
         passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
@@ -86,10 +96,15 @@ class JoinViewController: UIViewController {
         
   
         doSomethingOutlet.rx.tap
-            .subscribe(onNext: { self.createUser(self.usernameOutlet.text!, self.passwordOutlet.text!)})
-            .disposed(by: disposeBag)
+                    .debounce(.seconds(1), scheduler: MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] in
+                        self?.doSomethingOutlet.isEnabled = false // 중복 클릭 방지
+                        self?.createUser(self?.usernameOutlet.text ?? "", self?.passwordOutlet.text ?? "")
+                    })
+                    .disposed(by: disposeBag)
     }
     
+
 
     
     func createUser(_ email : String ,  _ password : String ){

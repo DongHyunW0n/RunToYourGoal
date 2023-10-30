@@ -20,6 +20,12 @@ private let minimalPasswordLength = 6
 
 class LoginViewController: UIViewController {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+         self.view.endEditing(true)
+
+   }
+    
     
     
     @IBOutlet weak var usernameOutlet: UITextField!
@@ -34,14 +40,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
         passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
         
         let usernameValid = usernameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
-            .share(replay: 1) // without this map would be executed once for each binding, rx is stateless by default
+            .share(replay: 1)
         
         let passwordValid = passwordOutlet.rx.text.orEmpty
             .map { $0.count >= minimalPasswordLength }
@@ -65,11 +70,14 @@ class LoginViewController: UIViewController {
             .bind(to: doSomethingOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        doSomethingOutlet.isExclusiveTouch = true
+        
         doSomethingOutlet.rx.tap
             .subscribe(onNext: { self.loginUser(email: self.usernameOutlet.text!, password: self.passwordOutlet.text!)})
             .disposed(by: disposeBag)
     }
     
+
     
     func loginUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in

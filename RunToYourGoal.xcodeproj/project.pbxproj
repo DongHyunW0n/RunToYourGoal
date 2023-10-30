@@ -19,7 +19,6 @@
 		8F38ADB42A894B8D003125F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F38ADB32A894B8D003125F6 /* Assets.xcassets */; };
 		8F38ADB72A894B8D003125F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F38ADB52A894B8D003125F6 /* LaunchScreen.storyboard */; };
 		8F4ACF5A2AE02873000A4BBE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4ACF592AE02873000A4BBE /* SnapKit */; };
-		8F4ACF5C2AE0292A000A4BBE /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4ACF5B2AE0292A000A4BBE /* GoalDetailViewController.swift */; };
 		8F4ACF5E2AE03AD5000A4BBE /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4ACF5D2AE03AD5000A4BBE /* DetailCell.swift */; };
 		8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */; };
 		8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */; };
@@ -27,6 +26,7 @@
 		8F8BF96E2AE66F0500D379C8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */; };
 		8F8BF9702AE6708200D379C8 /* GetCurrentTIme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */; };
 		8F8BF9742AE6883B00D379C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */; };
+		8F9F35E82AF0102F00ADB101 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9F35E72AF0102F00ADB101 /* SplashViewController.swift */; };
 		8FD1A45E2AD6B07000869BA0 /* AddGoalModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */; };
 		8FE1D10C2A9B243300582D66 /* FIrstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */; };
 		8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */; };
@@ -46,7 +46,6 @@
 		8F38ADB32A894B8D003125F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F38ADB62A894B8D003125F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F38ADB82A894B8D003125F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F4ACF5B2AE0292A000A4BBE /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		8F4ACF5D2AE03AD5000A4BBE /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentTIme.swift; sourceTree = "<group>"; };
 		8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../step1/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F9F35E72AF0102F00ADB101 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalModalViewController.swift; sourceTree = "<group>"; };
 		8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrstViewController.swift; sourceTree = "<group>"; };
 		8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
@@ -140,10 +140,10 @@
 				8F11EAFF2A9C990D0065CD08 /* LoginViewController.swift */,
 				8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */,
 				8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */,
-				8F4ACF5B2AE0292A000A4BBE /* GoalDetailViewController.swift */,
 				8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */,
 				8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */,
 				8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */,
+				8F9F35E72AF0102F00ADB101 /* SplashViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,10 +297,10 @@
 			files = (
 				8F4ACF5E2AE03AD5000A4BBE /* DetailCell.swift in Sources */,
 				8FE1D10C2A9B243300582D66 /* FIrstViewController.swift in Sources */,
-				8F4ACF5C2AE0292A000A4BBE /* GoalDetailViewController.swift in Sources */,
 				8F38ADAB2A894B8D003125F6 /* AppDelegate.swift in Sources */,
 				8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */,
 				8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */,
+				8F9F35E82AF0102F00ADB101 /* SplashViewController.swift in Sources */,
 				8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */,
 				8F10899E2AD55DE50087D297 /* MainListCell.swift in Sources */,
 				8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */,

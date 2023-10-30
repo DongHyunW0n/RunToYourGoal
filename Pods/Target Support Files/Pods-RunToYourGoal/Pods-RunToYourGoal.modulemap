@@ -1,0 +1,6 @@
+framework module Pods_RunToYourGoal {
+  umbrella header "Pods-RunToYourGoal-umbrella.h"
+
+  export *
+  module * { export * }
+}
