@@ -1,21 +1,14 @@
 //
-//  MainListCell.swift
+//  MainTableViewCell.swift
 //  RunToYourGoal
 //
-//  Created by WonDongHyun on 2023/10/10.
+//  Created by WonDongHyun on 10/31/23.
 //
 
 import UIKit
 
-class MainListCell: UITableViewCell {
+class MainTableViewCell: UITableViewCell {
 
-    
-    @IBOutlet weak var goalLabel: UILabel!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,5 +19,5 @@ class MainListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
