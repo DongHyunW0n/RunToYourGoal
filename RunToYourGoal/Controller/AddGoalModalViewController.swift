@@ -43,10 +43,10 @@ class AddGoalModalViewController: UIViewController {
         
         
         
-        descriptLabel.text = "목표가 너무 짧아요 !"
+        descriptLabel.text = "목표 길이를 확인해주세요 !"
         descriptLabel.textColor = .red
         
-        let goalValid = goalTextField.rx.text.orEmpty.map { $0.count >= 2 }.share(replay: 1)
+        let goalValid = goalTextField.rx.text.orEmpty.map { $0.count >= 2 && $0.count <= 10}.share(replay: 1)
         
         goalValid
             .map { $0 }

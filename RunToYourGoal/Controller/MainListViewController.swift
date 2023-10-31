@@ -34,13 +34,18 @@ class MainListViewController: UIViewController {
   
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchFirebaseData()
+        self.title = "일일 목표 리스트"
+        self.navigationItem.hidesBackButton = true
+        self.showDefaultInformation()
+        tableView.dataSource = self
+        tableView.delegate = self
         
-       
-    }
-    override func loadView() {
-        super.loadView()
+        let nib = UINib(nibName: "MainListCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
         
         let originalImage = UIImage(named: "person")
         let prosonFillImage = originalImage?.withRenderingMode(.alwaysOriginal)
@@ -48,38 +53,6 @@ class MainListViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(image: prosonFillImage, style: .plain, target: self, action: #selector(rightBarButtonTapped))
         rightBarButton.image?.withRenderingMode(.alwaysTemplate) // 이미지 렌더링 모드 변경
         self.navigationItem.rightBarButtonItem = rightBarButton
-    }
-    
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchFirebaseData()
-        
-     
-
-        self.title = "일일 목표 리스트"
-//        let originalImage = UIImage(systemName: "person.fill")
-//        let prosonFillImage = originalImage?.withRenderingMode(.alwaysOriginal)
-//     
-//        let rightBarButton = UIBarButtonItem(image: prosonFillImage, style: .plain, target: self, action: #selector(rightBarButtonTapped))
-//        rightBarButton.image?.withRenderingMode(.alwaysTemplate) // 이미지 렌더링 모드 변경
-        
-     
-      
-        self.navigationItem.hidesBackButton = true
-//        self.navigationItem.rightBarButtonItem = rightBarButton
-
-        
-        
-        self.showDefaultInformation()
-        
-     
-            
-            tableView.dataSource = self
-            tableView.delegate = self
        
         
     }
@@ -134,16 +107,15 @@ class MainListViewController: UIViewController {
 extension MainListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if goalList.isEmpty {
-            return 1
-        }else{
-            return goalList.count
-        }
+        return goalList.count
 
-        
         
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
@@ -159,6 +131,7 @@ extension MainListViewController : UITableViewDataSource {
         }
 
         cell.selectionStyle = .none
+//        cell.backgroundColor = UIColor.clear
 
         return cell
         
