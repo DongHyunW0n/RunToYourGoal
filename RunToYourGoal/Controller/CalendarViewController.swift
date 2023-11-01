@@ -77,7 +77,7 @@ class CalendarViewController: UIViewController {
         view.addSubview(customTitleView)
         titleLabel.text = "\(currentGoalName) 일일체크"
         titleLabel.textColor = .black
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
         customTitleView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
@@ -132,7 +132,7 @@ class CalendarViewController: UIViewController {
         
 
         
-        todayTitleLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        todayTitleLabel.font = UIFont(name: "SOYO Maple Regular", size: 25)
         todayTitleLabel.textColor = .black
         todayTitleLabel.textAlignment = .center
         todayTitleLabel.text = "오늘은 목표를 달성했나요?"
@@ -179,7 +179,7 @@ class CalendarViewController: UIViewController {
             
             make.top.equalTo(todayTitleLabel.snp.bottom).offset(40)
             make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(80)
+//            make.bottom.equalToSuperview().inset(80)
             
             
         }

@@ -31,7 +31,7 @@ class MyPageViewController : UIViewController{
         let nickNameLabel : UILabel = {
             
             let label = UILabel()
-            label.text = "닉네임입니다"
+            label.text = ""
             label.font = UIFont.systemFont(ofSize: 20)
             label.textColor = UIColor.black
             label.textAlignment = .center
@@ -127,6 +127,8 @@ class MyPageViewController : UIViewController{
             }
         }
         
+
+     
         
         
 
