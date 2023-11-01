@@ -119,7 +119,7 @@ class JoinViewController: UIViewController {
                     
                 case 17007 : //이메일 이미 존재하는 경우
                     
-                    self.showAlert(detail: "이미 존재하는 아이디입니다.\n 로그인 화면으로 이동합니다 !")
+                    self.AlreadyshowAlert(detail: "이미 존재하는 아이디입니다.\n 로그인 화면으로 이동합니다 !")
                     
                     
                 default :
@@ -161,13 +161,25 @@ class JoinViewController: UIViewController {
         
     }
     
-    func showAlert( detail : String) {
+    func AlreadyshowAlert( detail : String) {
         
         
         let alertController = UIAlertController(title: "에러", message: detail , preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "확인", style: .cancel) { _ in
             
             self.moveToLoginViewController()
+        }
+        alertController.addAction(okButton)
+        present(alertController, animated: true)
+        
+    }
+    
+    func showAlert( detail : String) {
+        
+        
+        let alertController = UIAlertController(title: "에러", message: detail , preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "확인", style: .cancel) { _ in
+            
         }
         alertController.addAction(okButton)
         present(alertController, animated: true)

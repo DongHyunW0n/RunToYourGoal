@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var usernameOutlet: UITextField!
-    @IBOutlet weak var usernameValidOutlet: UILabel!
+//    @IBOutlet weak var usernameValidOutlet: UILabel!
     
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var passwordValidOutlet: UILabel!
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
+//        usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
         passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
         
         let usernameValid = usernameOutlet.rx.text.orEmpty
@@ -58,9 +58,9 @@ class LoginViewController: UIViewController {
             .bind(to: passwordOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        usernameValid
-            .bind(to: usernameValidOutlet.rx.isHidden)
-            .disposed(by: disposeBag)
+//        usernameValid
+//            .bind(to: usernameValidOutlet.rx.isHidden)
+//            .disposed(by: disposeBag)
         
         passwordValid
             .bind(to: passwordValidOutlet.rx.isHidden)

@@ -26,6 +26,7 @@ class CalendarViewController: UIViewController {
     let didnotButton = UIButton()
     let customTitleView = UIView()
     let titleLabel = UILabel()
+    let deleteButton = UIButton()
     var currentGoalName : String = ""
 
 
@@ -58,17 +59,19 @@ class CalendarViewController: UIViewController {
         
       print("현재 페이지의 목표는 : \(currentGoalName)")
         
-        let goalRef = ref.child("가입자 리스트").child(uid ?? "").child("목표 리스트").child(currentGoalName).child("성공 여부")
-
-//         성공 여부 딕셔너리를 읽어오기
-        goalRef.observe(.value) { [weak self] (snapshot) in
-            if let successDict = snapshot.value as? [String: String] {
-             
-                self?.successDict = successDict
-                self?.calendar.reloadData()
-            }
-        }
-      
+        //프리뷰 보려면 코드블럭 두개 주석처리 해야함.
+//
+//        let goalRef = ref.child("가입자 리스트").child(uid ?? "").child("목표 리스트").child(currentGoalName).child("성공 여부")
+//
+////         성공 여부 딕셔너리를 읽어오기
+//        goalRef.observe(.value) { [weak self] (snapshot) in
+//            if let successDict = snapshot.value as? [String: String] {
+//             
+//                self?.successDict = successDict
+//                self?.calendar.reloadData()
+//            }
+//        }
+//      
 
     
 
@@ -78,11 +81,7 @@ class CalendarViewController: UIViewController {
         titleLabel.text = "\(currentGoalName) 일일체크"
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
-        customTitleView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(30)
-        }
+     
 
         customTitleView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -137,6 +136,11 @@ class CalendarViewController: UIViewController {
         todayTitleLabel.textAlignment = .center
         todayTitleLabel.text = "오늘은 목표를 달성했나요?"
         
+        deleteButton.titleLabel?.font = UIFont(name: "SOYO Maple Regular", size: 15)
+        deleteButton.addTarget(self, action: #selector(deleteButtonTabbed), for: .touchUpOutside)
+
+        
+        
         
         didButton.setImage(UIImage(named: "successbutton"), for: .normal)
         didButton.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
@@ -158,6 +162,18 @@ class CalendarViewController: UIViewController {
         view.addSubview(checkStackView)
         checkStackView.addArrangedSubview(didButton)
         checkStackView.addArrangedSubview(didnotButton)
+        
+        
+        
+        
+        //Set Constraints
+        
+        
+        customTitleView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(30)
+        }
 
 
         calendar.snp.makeConstraints { make in
@@ -197,6 +213,12 @@ class CalendarViewController: UIViewController {
     
     }
     
+    @objc func deleteButtonTabbed() {
+    
+    }
+    
+    
+  
     func YesAreYouSureAlert() -> () {
         
         let alert = UIAlertController(title: "확인", message:"정말 평가하시겠습니까?\n평가는 당일에만 수정 가능합니다", preferredStyle: .alert)
@@ -235,8 +257,6 @@ class CalendarViewController: UIViewController {
         alert.addAction(cancelbutton)
         present(alert, animated: true)
         calendar.reloadData()
-
-  
     }
     
     func FaildoneAlert()->() {
@@ -246,35 +266,19 @@ class CalendarViewController: UIViewController {
         alert.addAction(cancelbutton)
         present(alert, animated: true)
         calendar.reloadData()
-
-  
     }
     
     func setValueOnDatebase() {
-        
-    
         let currentDate = getCurrentTime()
-        
         let goalRef = ref.child("가입자 리스트").child(uid ?? "UID").child("목표 리스트").child(currentGoalName).child("성공 여부")
         goalRef.updateChildValues([currentDate: "O"])
-        
-        
-        
     }
     
     func setValueOnDatebaseNo() {
-        
-    
         let currentDate = getCurrentTime()
-        
         let goalRef = ref.child("가입자 리스트").child(uid ?? "UID").child("목표 리스트").child(currentGoalName).child("성공 여부")
         goalRef.updateChildValues([currentDate: "X"])
-        
-        
-        
     }
-
-    
 }
 
 extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
@@ -336,7 +340,7 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
 }
 
 
-
+// 프리뷰 보려고 스유로 래핑함.
 
 struct CalendarViewControllerWrapper: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> CalendarViewController {
