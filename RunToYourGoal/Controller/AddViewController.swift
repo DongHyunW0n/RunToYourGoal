@@ -105,7 +105,7 @@ class AddViewController: UIViewController {
         statusLabel.text = "목표의 길이를 확인해주세요"
         statusLabel.textColor = .red
         statusLabel.textAlignment = .center
-        statusLabel.font = UIFont(name: "SOYO Maple Regular", size: 12)
+        statusLabel.font = UIFont(name: "SOYO Maple Regular", size: 15)
         view.addSubview(statusLabel)
         
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
