@@ -25,20 +25,15 @@ class ReportViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-        
-    }
+           super.viewDidLoad()
+       }
     
 
     @IBAction func sendButton(_ sender: UIButton) {
         
         ref.child("건의사항").child("\(currentUserUID ?? "누군지 모르는 uid")").childByAutoId().setValue(textView.text)
         doneAlert()
-        
-        
-        
+
         
     }
     
@@ -54,4 +49,6 @@ class ReportViewController: UIViewController {
         present(alert, animated: true)
   
     }
+    
+
 }

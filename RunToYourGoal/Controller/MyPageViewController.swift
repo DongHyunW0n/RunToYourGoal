@@ -26,13 +26,26 @@ class MyPageViewController : UIViewController{
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let versionLabel : UILabel = {
+           
+            let label = UILabel()
+            label.text =  "ver 1.0"
+            label.font = UIFont(name: "SOYO Maple regular", size: 15)
+            label.textColor = UIColor.black
+            label.textAlignment = .center
+            
+            
+            
+            return label
+        }()
 
         
         let nickNameLabel : UILabel = {
             
             let label = UILabel()
             label.text = ""
-            label.font = UIFont.systemFont(ofSize: 20)
+            label.font = UIFont(name: "SOYO Maple Regular", size: 25)
             label.textColor = UIColor.black
             label.textAlignment = .center
             label.adjustsFontSizeToFitWidth = true // 텍스트 크기를 조절하도록 설정
@@ -84,14 +97,14 @@ class MyPageViewController : UIViewController{
         view.addSubview(nickNameLabel)
         view.addSubview(logoutButton)
         view.addSubview(reportButton)
-
+        view.addSubview(versionLabel)
         
         
         
 
         nickNameLabel.snp.makeConstraints { make in
 
-            make.top.equalToSuperview().offset(80)
+            make.top.equalToSuperview().offset(120)
             make.leading.trailing.equalToSuperview().inset(20)
             
         }
@@ -110,6 +123,11 @@ class MyPageViewController : UIViewController{
             make.top.equalTo(logoutButton.snp.bottom).offset(30)
             make.leading.trailing.equalToSuperview().inset(120)
             
+        }
+        versionLabel.snp.makeConstraints { make in
+            
+            make.bottom.equalTo(view.snp.bottom).inset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         
         self.title = "내 정보"
@@ -169,17 +187,36 @@ class MyPageViewController : UIViewController{
     
     @objc func reportButtonTab() {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let reportView = storyboard.instantiateViewController(identifier: "ReportViewController")
-        self.present(reportView, animated: true)
         
         
+        noticeAlert()
         
+    
+        
+        
+
+        
+        
+    }
+    
+    func noticeAlert() {
+        
+        let alert = UIAlertController(title: "안내", message: "답변을 받으시려면 이메일 주소를 적어주세요!", preferredStyle: .alert)
+        let okbutton = UIAlertAction(title: "확인", style: .cancel) { UIAlertAction in
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let reportView = storyboard.instantiateViewController(identifier: "ReportViewController")
+            self.present(reportView, animated: true)
+            
+        }
+        alert.addAction(okbutton)
+        self.present(alert, animated: true)
+  
+        }
     }
 
     
     
-}
 
 
 

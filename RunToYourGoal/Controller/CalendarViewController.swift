@@ -59,26 +59,27 @@ class CalendarViewController: UIViewController {
         
       print("현재 페이지의 목표는 : \(currentGoalName)")
         
-        //프리뷰 보려면 코드블럭 두개 주석처리 해야함.
-//
-//        let goalRef = ref.child("가입자 리스트").child(uid ?? "").child("목표 리스트").child(currentGoalName).child("성공 여부")
-//
-////         성공 여부 딕셔너리를 읽어오기
-//        goalRef.observe(.value) { [weak self] (snapshot) in
-//            if let successDict = snapshot.value as? [String: String] {
-//             
-//                self?.successDict = successDict
-//                self?.calendar.reloadData()
-//            }
-//        }
-//      
+//        프리뷰 보려면 여기서부터
+
+        let goalRef = ref.child("가입자 리스트").child(uid ?? "").child("목표 리스트").child(currentGoalName).child("성공 여부")
+
+//         성공 여부 딕셔너리를 읽어오기
+        goalRef.observe(.value) { [weak self] (snapshot) in
+            if let successDict = snapshot.value as? [String: String] {
+             
+                self?.successDict = successDict
+                self?.calendar.reloadData()
+            }
+        }
+      
+        //이거 위에까지 주석처리
 
     
 
         
 
         view.addSubview(customTitleView)
-        titleLabel.text = "\(currentGoalName) 일일체크"
+        titleLabel.text = "\(currentGoalName)"
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
      

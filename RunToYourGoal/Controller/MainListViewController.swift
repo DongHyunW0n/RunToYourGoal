@@ -31,13 +31,17 @@ class MainListViewController: UIViewController {
   
 
     var goalList: [String] = []
+    var dateList: [String] = []
+
   
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchFirebaseData()
+        fetchFirebaseDateData()
+        fetchFirebaseGoalData()
+
         self.title = "일일 목표 리스트"
         self.navigationItem.hidesBackButton = true
         self.showDefaultInformation()
@@ -60,8 +64,7 @@ class MainListViewController: UIViewController {
 
     @IBAction func addButton(_ sender: UIButton) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewcontroller = storyboard.instantiateViewController(withIdentifier: "AddGoalModalViewController")
+        let viewcontroller = AddViewController()
         self.present(viewcontroller, animated: true)
     
         
@@ -84,12 +87,28 @@ class MainListViewController: UIViewController {
         
     }
     
-    func fetchFirebaseData() {
+    func fetchFirebaseGoalData() {
         let goalRef = ref.child("가입자 리스트").child("\(userID ?? "UID")").child("목표 리스트")
         goalRef.observe(.childAdded) { snapshot in
             if let goalData = snapshot.value as? [String: Any] {
                 if let goal = goalData["목표"] as? String {
                     self.goalList.append(goal)
+                    print("목표: \(goal)")
+                    
+                    DispatchQueue.main.async {
+                        self.tableView?.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchFirebaseDateData() {
+        let goalRef = ref.child("가입자 리스트").child("\(userID ?? "UID")").child("목표 리스트")
+        goalRef.observe(.childAdded) { snapshot in
+            if let goalData = snapshot.value as? [String: Any] {
+                if let goal = goalData["시작일"] as? String {
+                    self.dateList.append(goal)
                     print("목표: \(goal)")
                     
                     DispatchQueue.main.async {
@@ -128,6 +147,7 @@ extension MainListViewController : UITableViewDataSource {
             cell.dateLabel.text = "오늘부터 시작 !"
         } else {
             cell.goalLabel.text = goalList[indexPath.row]
+            cell.dateLabel.text = "\(dateList[indexPath.row]) 등록"
         }
 
         cell.selectionStyle = .none

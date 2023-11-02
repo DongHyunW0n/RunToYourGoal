@@ -18,6 +18,7 @@
 		8F38ADB42A894B8D003125F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F38ADB32A894B8D003125F6 /* Assets.xcassets */; };
 		8F38ADB72A894B8D003125F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F38ADB52A894B8D003125F6 /* LaunchScreen.storyboard */; };
 		8F4ACF5A2AE02873000A4BBE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4ACF592AE02873000A4BBE /* SnapKit */; };
+		8F6A44692AF343270068ADA6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6A44682AF343270068ADA6 /* AddViewController.swift */; };
 		8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */; };
 		8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */; };
 		8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */; };
@@ -29,7 +30,6 @@
 		8FCD50BD2AF1755D00C00221 /* SOYO Maple Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FCD50BB2AF1755D00C00221 /* SOYO Maple Bold.otf */; };
 		8FCD50C62AF1788100C00221 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD50C42AF1788100C00221 /* MainListCell.swift */; };
 		8FCD50C72AF1788100C00221 /* MainListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FCD50C52AF1788100C00221 /* MainListCell.xib */; };
-		8FD1A45E2AD6B07000869BA0 /* AddGoalModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */; };
 		8FE1D10C2A9B243300582D66 /* FIrstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */; };
 		8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */; };
 		8FE1D11E2A9B311900582D66 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE1D11D2A9B311900582D66 /* RxCocoa */; };
@@ -47,6 +47,7 @@
 		8F38ADB32A894B8D003125F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F38ADB62A894B8D003125F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F38ADB82A894B8D003125F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F6A44682AF343270068ADA6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		8FCD50BB2AF1755D00C00221 /* SOYO Maple Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SOYO Maple Bold.otf"; path = "RunToYourGoal/SOYO Maple Bold.otf"; sourceTree = SOURCE_ROOT; };
 		8FCD50C42AF1788100C00221 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
 		8FCD50C52AF1788100C00221 /* MainListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListCell.xib; sourceTree = "<group>"; };
-		8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalModalViewController.swift; sourceTree = "<group>"; };
 		8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrstViewController.swift; sourceTree = "<group>"; };
 		8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		A7526BAC5F78F703EA5E87A1 /* Pods-RunToYourGoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunToYourGoal.debug.xcconfig"; path = "Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,11 +153,11 @@
 				8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */,
 				8F11EAFF2A9C990D0065CD08 /* LoginViewController.swift */,
 				8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */,
-				8FD1A45D2AD6B07000869BA0 /* AddGoalModalViewController.swift */,
 				8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */,
 				8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */,
 				8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */,
 				8F9F35E72AF0102F00ADB101 /* SplashViewController.swift */,
+				8F6A44682AF343270068ADA6 /* AddViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,6 +314,7 @@
 			files = (
 				8FE1D10C2A9B243300582D66 /* FIrstViewController.swift in Sources */,
 				8F38ADAB2A894B8D003125F6 /* AppDelegate.swift in Sources */,
+				8F6A44692AF343270068ADA6 /* AddViewController.swift in Sources */,
 				8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */,
 				8FCD50C62AF1788100C00221 /* MainListCell.swift in Sources */,
 				8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */,
@@ -321,7 +322,6 @@
 				8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */,
 				8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */,
 				8F11EB002A9C990D0065CD08 /* LoginViewController.swift in Sources */,
-				8FD1A45E2AD6B07000869BA0 /* AddGoalModalViewController.swift in Sources */,
 				8F8BF9702AE6708200D379C8 /* GetCurrentTIme.swift in Sources */,
 				8F38ADAD2A894B8D003125F6 /* SceneDelegate.swift in Sources */,
 				8F8BF96E2AE66F0500D379C8 /* CalendarViewController.swift in Sources */,
