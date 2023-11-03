@@ -64,7 +64,7 @@ class AddViewController: UIViewController {
     
     
     func setTItleLabel() {
-        titleLabel.text = "추가할 목표를 적어보세요"
+        titleLabel.text = NSLocalizedString("목표를 입력해보세요", comment: "")
         titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
         titleLabel.textAlignment = .center
         view.addSubview(titleLabel)

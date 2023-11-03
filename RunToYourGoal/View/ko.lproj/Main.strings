@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "Status Label"; ObjectID = "4Nr-Ga-cab"; */
+"4Nr-Ga-cab.text" = "Status Label";
+
+/* Class = "UIButton"; configuration.title = "전송하기"; ObjectID = "5RP-si-ZFx"; */
+"5RP-si-ZFx.configuration.title" = "전송하기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5RP-si-ZFx"; */
+"5RP-si-ZFx.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "example@gmail.com"; ObjectID = "6ch-Es-ZdO"; */
+"6ch-Es-ZdO.placeholder" = "example@gmail.com";
+
+/* Class = "UILabel"; text = "회원 가입"; ObjectID = "Az5-8b-BC7"; */
+"Az5-8b-BC7.text" = "회원 가입";
+
+/* Class = "UIViewController"; title = "FirstViewController"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "FirstViewController";
+
+/* Class = "UILabel"; text = "이메일"; ObjectID = "Ck6-iO-dmB"; */
+"Ck6-iO-dmB.text" = "이메일";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Cvh-ly-I31"; */
+"Cvh-ly-I31.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "닉네임"; ObjectID = "FX8-VZ-Der"; */
+"FX8-VZ-Der.text" = "닉네임";
+
+/* Class = "UIButton"; configuration.title = "로그인"; ObjectID = "Jhb-Go-woI"; */
+"Jhb-Go-woI.configuration.title" = "로그인";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jhb-Go-woI"; */
+"Jhb-Go-woI.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "소중한 데이터의 보호를 위해 계정이 필요합니다"; ObjectID = "Ma2-Kt-xRQ"; */
+"Ma2-Kt-xRQ.text" = "소중한 데이터의 보호를 위해 계정이 필요합니다";
+
+/* Class = "UILabel"; text = "PW"; ObjectID = "Qs8-kq-yDc"; */
+"Qs8-kq-yDc.text" = "PW";
+
+/* Class = "UILabel"; text = "PW"; ObjectID = "Tit-Ub-ddm"; */
+"Tit-Ub-ddm.text" = "PW";
+
+/* Class = "UILabel"; text = "Status Label"; ObjectID = "Uzr-1q-F7R"; */
+"Uzr-1q-F7R.text" = "Status Label";
+
+/* Class = "UILabel"; text = "하루 습관 체크"; ObjectID = "VqV-PB-USR"; */
+"VqV-PB-USR.text" = "하루 습관 체크";
+
+/* Class = "UIButton"; configuration.title = "가입"; ObjectID = "XMO-ig-Fau"; */
+"XMO-ig-Fau.configuration.title" = "가입";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XMO-ig-Fau"; */
+"XMO-ig-Fau.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "MainListViewController"; ObjectID = "ghK-Gq-FDy"; */
+"ghK-Gq-FDy.title" = "MainListViewController";
+
+/* Class = "UILabel"; text = "(가장 심플한)"; ObjectID = "inL-5c-G8k"; */
+"inL-5c-G8k.text" = "(가장 심플한)";
+
+/* Class = "UILabel"; text = "이메일"; ObjectID = "mef-ov-Cok"; */
+"mef-ov-Cok.text" = "이메일";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qUu-dU-MOk"; */
+"qUu-dU-MOk.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Status Label"; ObjectID = "uY8-H2-w7U"; */
+"uY8-H2-w7U.text" = "Status Label";
+
+/* Class = "UILabel"; text = "로그인"; ObjectID = "xjP-n5-MTA"; */
+"xjP-n5-MTA.text" = "로그인";
+
+/* Class = "UILabel"; text = "개발자에게 건의하기"; ObjectID = "yQF-Np-7hD"; */
+"yQF-Np-7hD.text" = "개발자에게 건의하기";
+
+/* Class = "UILabel"; text = "환영합니다 !"; ObjectID = "ykR-dF-meq"; */
+"ykR-dF-meq.text" = "환영합니다 !";
+
+/* Class = "UITextField"; placeholder = "example@gmail.com"; ObjectID = "ylw-DN-vlA"; */
+"ylw-DN-vlA.placeholder" = "example@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ytO-yI-fxX"; */
+"ytO-yI-fxX.normalTitle" = "Button";
