@@ -93,7 +93,7 @@ class MainListViewController: UIViewController {
             if let goalData = snapshot.value as? [String: Any] {
                 if let goal = goalData["목표"] as? String {
                     self.goalList.append(goal)
-                    print("목표: \(goal)")
+                    print("목표명: \(goal)")
                     
                     DispatchQueue.main.async {
                         self.tableView?.reloadData()
@@ -109,7 +109,7 @@ class MainListViewController: UIViewController {
             if let goalData = snapshot.value as? [String: Any] {
                 if let goal = goalData["시작일"] as? String {
                     self.dateList.append(goal)
-                    print("목표: \(goal)")
+                    print("목표 설정일: \(goal)")
                     
                     DispatchQueue.main.async {
                         self.tableView?.reloadData()
@@ -170,6 +170,8 @@ extension MainListViewController : UITableViewDelegate {
             return
         }else{
             targetView.currentGoalName = goalList[indexPath.row]
+            targetView.startDate = dateList[indexPath.row]
+
             self.navigationController?.pushViewController(targetView, animated: true)
         }
             
@@ -178,6 +180,37 @@ extension MainListViewController : UITableViewDelegate {
     }
     
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "삭제 확인", message: "정말로 이 목표를 삭제하시겠습니까? \n 삭제한 목표는 복구할 수 없습니다.", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] _ in
+                self?.deleteGoalFromFirebase(at: indexPath)
+            }
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            
+            alert.addAction(deleteAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true)
+        }
+    }
+
+    func deleteGoalFromFirebase(at indexPath: IndexPath) {
+        let goalRef = ref.child("가입자 리스트").child("\(userID ?? "UID")").child("목표 리스트")
+        let goalToDelete = goalList[indexPath.row] // 삭제할 목표
+        
+        goalRef.queryOrdered(byChild: "목표").queryEqual(toValue: goalToDelete).observeSingleEvent(of: .childAdded) { snapshot in
+            snapshot.ref.removeValue { [weak self] error, _ in
+                if let error = error {
+                    print("데이터 삭제 중 오류 발생: \(error)")
+                } else {
+                    print("데이터가 성공적으로 삭제되었습니다.")
+                    self?.goalList.remove(at: indexPath.row)
+                    self?.dateList.remove(at: indexPath.row)
+                    self?.tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+        }
+    }
     
 }

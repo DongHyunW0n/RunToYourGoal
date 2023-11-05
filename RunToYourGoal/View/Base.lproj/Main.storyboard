@@ -93,6 +93,58 @@
             </objects>
             <point key="canvasLocation" x="-260" y="-36.431784107946029"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="uAe-YT-Ah1">
+            <objects>
+                <viewController id="JAk-1e-iyH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XFb-RX-dv7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가장 단순한 일일평가에 오신것을 환영합니다 !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi3-xE-2Hu">
+                                <rect key="frame" x="17" y="90" width="341" height="67.5"/>
+                                <fontDescription key="fontDescription" name="SOYO-Maple-Bold" family="SOYO Maple" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 사용방법을 알려드리겠습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYx-mh-QPj">
+                                <rect key="frame" x="20" y="330.5" width="335" height="26"/>
+                                <fontDescription key="fontDescription" name="SOYO-Maple-Regular" family="SOYO Maple" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPv-b7-5a4">
+                                <rect key="frame" x="15" y="567" width="345" height="60"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7fF-B3-Yup"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" name="SOYO-Maple-Regular" family="SOYO Maple" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7sh-bg-QK2"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XYx-mh-QPj" firstAttribute="centerY" secondItem="7sh-bg-QK2" secondAttribute="centerY" id="7lr-0l-bAs"/>
+                            <constraint firstItem="vi3-xE-2Hu" firstAttribute="top" secondItem="7sh-bg-QK2" secondAttribute="top" constant="70" id="Fjb-lQ-bA3"/>
+                            <constraint firstItem="XYx-mh-QPj" firstAttribute="centerX" secondItem="7sh-bg-QK2" secondAttribute="centerX" id="P08-yR-Mt5"/>
+                            <constraint firstItem="vi3-xE-2Hu" firstAttribute="leading" secondItem="7sh-bg-QK2" secondAttribute="leading" constant="17" id="a9a-iY-93j"/>
+                            <constraint firstItem="wPv-b7-5a4" firstAttribute="leading" secondItem="7sh-bg-QK2" secondAttribute="leading" constant="15" id="hxa-cS-bT4"/>
+                            <constraint firstItem="7sh-bg-QK2" firstAttribute="trailing" secondItem="vi3-xE-2Hu" secondAttribute="trailing" constant="17" id="qdB-sF-gzz"/>
+                            <constraint firstItem="7sh-bg-QK2" firstAttribute="bottom" secondItem="wPv-b7-5a4" secondAttribute="bottom" constant="40" id="sr2-E5-ITT"/>
+                            <constraint firstItem="7sh-bg-QK2" firstAttribute="trailing" secondItem="wPv-b7-5a4" secondAttribute="trailing" constant="15" id="zVJ-nX-Jev"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kkh-BA-6Xz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2151" y="700"/>
+        </scene>
         <!--Join View Controller-->
         <scene sceneID="Csc-71-fR5">
             <objects>
@@ -514,6 +566,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

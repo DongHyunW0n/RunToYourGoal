@@ -26,9 +26,10 @@ class CalendarViewController: UIViewController {
     let didnotButton = UIButton()
     let customTitleView = UIView()
     let titleLabel = UILabel()
-    let deleteButton = UIButton()
     var currentGoalName : String = ""
 
+    var startDate : String = ""
+    
 
    
     
@@ -39,6 +40,7 @@ class CalendarViewController: UIViewController {
        }()
 
     let uid = Auth.auth().currentUser?.uid
+    
     
     
 
@@ -58,7 +60,10 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         
       print("현재 페이지의 목표는 : \(currentGoalName)")
+
+        print("시작일 : \(startDate)")
         
+   
 //        프리뷰 보려면 여기서부터
 
         let goalRef = ref.child("가입자 리스트").child(uid ?? "").child("목표 리스트").child(currentGoalName).child("성공 여부")
@@ -82,6 +87,7 @@ class CalendarViewController: UIViewController {
         titleLabel.text = "\(currentGoalName)"
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
+        titleLabel.adjustsFontSizeToFitWidth = true
      
 
         customTitleView.addSubview(titleLabel)
@@ -127,7 +133,8 @@ class CalendarViewController: UIViewController {
             return false
         }
 
-
+      
+        
         
         
 
@@ -137,8 +144,7 @@ class CalendarViewController: UIViewController {
         todayTitleLabel.textAlignment = .center
         todayTitleLabel.text = "오늘은 목표를 달성했나요?"
         
-        deleteButton.titleLabel?.font = UIFont(name: "SOYO Maple Regular", size: 15)
-        deleteButton.addTarget(self, action: #selector(deleteButtonTabbed), for: .touchUpOutside)
+       
 
         
         
@@ -153,6 +159,8 @@ class CalendarViewController: UIViewController {
         
         checkStackView.axis = .horizontal
         checkStackView.distribution = .fillEqually
+        
+        
         
 
         
@@ -200,6 +208,8 @@ class CalendarViewController: UIViewController {
             
             
         }
+        
+      
 
     }
     
@@ -214,11 +224,8 @@ class CalendarViewController: UIViewController {
     
     }
     
-    @objc func deleteButtonTabbed() {
-    
-    }
-    
-    
+ 
+
   
     func YesAreYouSureAlert() -> () {
         

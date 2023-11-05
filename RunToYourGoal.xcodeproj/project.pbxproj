@@ -23,6 +23,7 @@
 		8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */; };
 		8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */; };
 		8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */; };
+		8F795CAC2AF7D5B200080D74 /* GetFirstTimeTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F795CAB2AF7D5B200080D74 /* GetFirstTimeTF.swift */; };
 		8F8BF96E2AE66F0500D379C8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */; };
 		8F8BF9702AE6708200D379C8 /* GetCurrentTIme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */; };
 		8F8BF9742AE6883B00D379C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */; };
@@ -40,9 +41,9 @@
 
 /* Begin PBXFileReference section */
 		1D4A9D0F73CE55FA4F073046 /* Pods-RunToYourGoal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunToYourGoal.release.xcconfig"; path = "Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal.release.xcconfig"; sourceTree = "<group>"; };
-		8F00A22B2AF4CB6F00F35C1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8F00A22D2AF4CE5600F35C1F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		8F00A22E2AF4CE5600F35C1F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8F00A2302AF4D02D00F35C1F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		8F00A2312AF4D06D00F35C1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F11EAFF2A9C990D0065CD08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8F38ADA72A894B8D003125F6 /* RunToYourGoal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunToYourGoal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F38ADAA2A894B8D003125F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		8F795CAB2AF7D5B200080D74 /* GetFirstTimeTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFirstTimeTF.swift; sourceTree = "<group>"; };
 		8F8BF96D2AE66F0500D379C8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentTIme.swift; sourceTree = "<group>"; };
 		8F8BF9732AE6883B00D379C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../step1/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				8F8BF96F2AE6708200D379C8 /* GetCurrentTIme.swift */,
 				8FCD50C42AF1788100C00221 /* MainListCell.swift */,
 				8FCD50C52AF1788100C00221 /* MainListCell.xib */,
+				8F795CAB2AF7D5B200080D74 /* GetFirstTimeTF.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,7 +235,7 @@
 			};
 			buildConfigurationList = 8F38ADA22A894B8D003125F6 /* Build configuration list for PBXProject "RunToYourGoal" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -329,6 +332,7 @@
 				8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */,
 				8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */,
 				8F11EB002A9C990D0065CD08 /* LoginViewController.swift in Sources */,
+				8F795CAC2AF7D5B200080D74 /* GetFirstTimeTF.swift in Sources */,
 				8F8BF9702AE6708200D379C8 /* GetCurrentTIme.swift in Sources */,
 				8F38ADAD2A894B8D003125F6 /* SceneDelegate.swift in Sources */,
 				8F8BF96E2AE66F0500D379C8 /* CalendarViewController.swift in Sources */,
@@ -341,8 +345,8 @@
 		8F00A22C2AF4CB6F00F35C1F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8F00A22B2AF4CB6F00F35C1F /* en */,
 				8F00A22E2AF4CE5600F35C1F /* ko */,
+				8F00A2312AF4D06D00F35C1F /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -351,7 +355,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8F38ADB12A894B8D003125F6 /* Base */,
-				8F00A22D2AF4CE5600F35C1F /* ko */,
+				8F00A2302AF4D02D00F35C1F /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -494,6 +498,7 @@
 				DEVELOPMENT_TEAM = H5CH2SK77M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunToYourGoal/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "하루 습관 체크";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -525,6 +530,7 @@
 				DEVELOPMENT_TEAM = H5CH2SK77M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunToYourGoal/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "하루 습관 체크";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

@@ -13,6 +13,8 @@ class MainListCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +25,7 @@ class MainListCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 6, bottom: 10, right: 6))
         
         setView()
+        dateLabel.adjustsFontSizeToFitWidth = true
         
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

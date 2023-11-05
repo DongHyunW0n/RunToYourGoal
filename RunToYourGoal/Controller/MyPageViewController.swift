@@ -65,7 +65,9 @@ class MyPageViewController : UIViewController{
         let reportButton : UIButton = {
             
             let button = UIButton()
-            button.setTitle("개발자에게 건의하기", for: .normal)
+            
+            let buttonTitle = NSLocalizedString("개발자에게 건의하기", comment: "")
+            button.setTitle(buttonTitle, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             button.titleLabel?.textColor = UIColor.black
             button.addTarget(self, action: #selector(reportButtonTab), for : .touchUpInside)
