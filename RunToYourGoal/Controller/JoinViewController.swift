@@ -37,11 +37,19 @@ class JoinViewController: UIViewController {
          self.view.endEditing(true)
 
    }
-
+    @IBOutlet weak var signUpLabel: UILabel!
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
+    
     @IBOutlet weak var usernameOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var passwordValidOutlet: UILabel!
 
+    
+    @IBOutlet weak var repasswordOutlet: UITextField!
+    
+    @IBOutlet weak var repasswordValidOutlet: UILabel!
     @IBOutlet weak var nickNameOutlet: UITextField!
     @IBOutlet weak var doSomethingOutlet: UIButton!
     
@@ -51,13 +59,18 @@ class JoinViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        signUpLabel.text = NSLocalizedString("Sign Up", comment: "")
+        welcomeLabel.text = NSLocalizedString("Welcome!", comment: "")
         
         doSomethingOutlet.isExclusiveTouch = true
 
-        
-        passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
-        nickNameValidOutlet.text = "닉네임은 2글자 이상 입력해주세요"
+//        doSomethingOutlet.titleLabel?.text = "뭔데?"
+//        doSomethingOutlet.titleLabel?.font = UIFont(name: "SOYO Maple Regular", size: 10)
+//        doSomethingOutlet.titleLabel?.textColor = .white
+
+        passwordValidOutlet.text = NSLocalizedString("Please enter a password of at least 6 characters", comment: "")
+        repasswordValidOutlet.text = NSLocalizedString("Please check if the passwords match", comment: "")
+        nickNameValidOutlet.text = NSLocalizedString("Please enter a nickname of at least 2 characters", comment: "")
 
         let usernameValid = usernameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
@@ -67,12 +80,22 @@ class JoinViewController: UIViewController {
             .map { $0.count >= minimalPasswordLength }
             .share(replay: 1)
         
+        
+        let passwordObserable = passwordOutlet.rx.text.orEmpty.asObservable()
+        let repasswordObserable = repasswordOutlet.rx.text.orEmpty.asObservable()
+        
+        let passwordsMatch = Observable.combineLatest(passwordObserable, repasswordObserable) { pw, repw in
+            return pw == repw && !pw.isEmpty && !repw.isEmpty
+        }.map { $0 }
+        .share(replay: 1)
+        
+        
         let nickNameValid = nickNameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalNicknameLength }
             .share(replay: 1)
-
-        let everythingValid = Observable.combineLatest(usernameValid, passwordValid , nickNameValid) { $0 && $1 && $2 }
-            .share(replay: 1)
+        let everythingValid = Observable.combineLatest(usernameValid, passwordValid, nickNameValid, passwordsMatch) {
+            $0 && $1 && $2 && $3
+        }.share(replay: 1)
         usernameValid
             .bind(to: passwordOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
@@ -83,8 +106,19 @@ class JoinViewController: UIViewController {
             .disposed(by: disposeBag)
         
         passwordValid
+            .bind(to: repasswordOutlet.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        passwordsMatch
             .bind(to: nickNameOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
+        
+        passwordsMatch
+            .bind(to: repasswordValidOutlet.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+    
+    
         
         nickNameValid
             .bind(to: nickNameValidOutlet.rx.isHidden)

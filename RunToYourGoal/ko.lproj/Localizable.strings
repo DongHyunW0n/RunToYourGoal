@@ -5,3 +5,51 @@
   Created by WonDongHyun on 11/3/23.
   
 */
+
+
+"Set your daily habit" = "일일 습관을 입력하세요" ;
+ "Send a feedback" = "개발자에게 건의하기";
+"Go to gym everyday" = "매일 운동하기";
+ "Please check your goal Length" = "목표의 길이를 확인해주세요";
+"Waiting for input" = "입력 대기중";
+"Please check goal Length" = "목표의 길이를 확인해주세요";
+"Did you keep this habit today?" = "오늘 이 습관을 잘 지켰나요?";
+"Sign In" = "로그인";
+"Sign Up" = "회원가입";
+
+"Welcome!" = "환영합니다";
+"Daily habit check" = "일일 습관 체크";
+"the simplest" = "가장 단순한";
+
+"Please enter a password of at least 6 characters" = "비밀번호는 6자 이상 입력해주세요";
+"Please check if the passwords match" = "비밀번호 일치를 확인하세요";
+"Please enter a nickname of at least 2 characters" = "닉네임은 2글자 이상 입력해주세요";
+"Daily habit list" = "일일 습관 리스트";
+
+"en_US" = "ko_KR";
+"MMM-yyyy" = "yyyy년 MM월";
+"Done" = "완료";
+"Well done today" = "오늘도 수고하셨습니다";
+"OK" = "확인";
+"Let's achieve it tomorrow!" = "내일은 달성합시다!";
+"Would you like to evaluate? Evaluations can only be edited on the same day" = "정말 평가 하시겠습니까? \n 평가는 당일에만 수정 가능합니다";
+
+"Yes" = "네";
+"No" = "아니요";
+"O" = "성공";
+"X" = "실패";
+" start" = " 시작";
+"Add" = "추가하기";
+"Would you like to add?" = "추가 하시겠습니까?";
+"Are you sure you want to delete this goal? Deleted goals cannot be recovered." = "정말로 이 목표를 삭제하시겠습니까? \n 삭제한 목표는 복구할 수 없습니다.";
+"Log out" = "로그아웃";
+
+"Please provide your email address to receive a response." = "답변을 받으시려면 이메일 주소를 적어주세요!";
+"Send a feedback" = "피드백 보내기";
+"Thanks for your feedback!" = "좋은 의견 감사합니다!";
+"Welcome to the simplest daily habit check" = "가장 단순한 일일 습관 체크에 오신것을 환영합니다";
+"Let me explain the simple usage" = "간단한 사용 방법을 알려드리겠습니다.";
+"Delete Account" = "회원 탈퇴";
+ "Are you sure?" = "정말로 회원 탈퇴를 하시겠습니까?";
+"WARNING" = "경고";
+"Fail" = "실패";

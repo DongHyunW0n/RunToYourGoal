@@ -27,6 +27,10 @@ class LoginViewController: UIViewController {
    }
     
     
+    @IBOutlet weak var signInLabel: UILabel!
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     
     @IBOutlet weak var usernameOutlet: UITextField!
 //    @IBOutlet weak var usernameValidOutlet: UILabel!
@@ -41,8 +45,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        signInLabel.text = NSLocalizedString("Sign In", comment: "")
+        welcomeLabel.text = NSLocalizedString("Welcome!", comment: "")
+
 //        usernameValidOutlet.text = "이메일 주소를 올바르게 입력해주세요"
-        passwordValidOutlet.text = "비밀번호는 6자 이상 입력해주세요"
+        passwordValidOutlet.text = NSLocalizedString("Please enter a password of at least 6 characters", comment: "")
         
         let usernameValid = usernameOutlet.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
@@ -69,7 +76,7 @@ class LoginViewController: UIViewController {
         everythingValid
             .bind(to: doSomethingOutlet.rx.isEnabled)
             .disposed(by: disposeBag)
-        
+        doSomethingOutlet.titleLabel?.text = NSLocalizedString("Sign In", comment: "")
         doSomethingOutlet.isExclusiveTouch = true
         
         doSomethingOutlet.rx.tap

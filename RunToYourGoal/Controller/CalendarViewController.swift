@@ -27,6 +27,7 @@ class CalendarViewController: UIViewController {
     let customTitleView = UIView()
     let titleLabel = UILabel()
     var currentGoalName : String = ""
+    let startDay = UILabel()
 
     var startDate : String = ""
     
@@ -62,7 +63,6 @@ class CalendarViewController: UIViewController {
       print("현재 페이지의 목표는 : \(currentGoalName)")
 
         print("시작일 : \(startDate)")
-        
    
 //        프리뷰 보려면 여기서부터
 
@@ -86,22 +86,24 @@ class CalendarViewController: UIViewController {
         view.addSubview(customTitleView)
         titleLabel.text = "\(currentGoalName)"
         titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
         titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
         titleLabel.adjustsFontSizeToFitWidth = true
+        
+
      
 
         customTitleView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.center.equalTo(customTitleView)
         }
-        
       
         
         // FSCalendar 설정
         calendar.delegate = self
         calendar.dataSource = self
-        calendar.locale = Locale(identifier: "ko_KR")
-        calendar.appearance.headerDateFormat = "YYYY년 MM월"
+        calendar.locale = Locale(identifier: NSLocalizedString("en_US", comment: ""))
+        calendar.appearance.headerDateFormat = NSLocalizedString("MMM-yyyy", comment: "")
 //        calendar.appearance.headerMinimumDissolvedAlpha = 0.0
 //        calendar.backgroundColor = UIColor(red: 241/255, green: 249/255, blue: 255/255, alpha: 1)
         calendar.allowsSelection = false
@@ -142,7 +144,8 @@ class CalendarViewController: UIViewController {
         todayTitleLabel.font = UIFont(name: "SOYO Maple Regular", size: 25)
         todayTitleLabel.textColor = .black
         todayTitleLabel.textAlignment = .center
-        todayTitleLabel.text = "오늘은 목표를 달성했나요?"
+        todayTitleLabel.text = NSLocalizedString("Did you keep this habit today?", comment: "")
+        todayTitleLabel.adjustsFontSizeToFitWidth = true
         
        
 
@@ -182,6 +185,9 @@ class CalendarViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(30)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
         }
 
 
@@ -229,12 +235,12 @@ class CalendarViewController: UIViewController {
   
     func YesAreYouSureAlert() -> () {
         
-        let alert = UIAlertController(title: "확인", message:"정말 평가하시겠습니까?\n평가는 당일에만 수정 가능합니다", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "네", style: .default) { UIAlertAction in
+        let alert = UIAlertController(title: "", message: NSLocalizedString("Would you like to evaluate? Evaluations can only be edited on the same day", comment: ""), preferredStyle: .alert)
+        let okButton = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .default) { UIAlertAction in
             self.setValueOnDatebase()
             self.SuccessdoneAlert()
         }
-        let cancelButton = UIAlertAction(title: "아니요", style: .cancel)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .cancel)
         alert.addAction(cancelButton)
         alert.addAction(okButton)
         present(alert, animated: true)
@@ -243,13 +249,13 @@ class CalendarViewController: UIViewController {
     
     func NoAreYouSureAlert() -> () {
         
-        let alert = UIAlertController(title: "확인", message:"정말 평가하시겠습니까?\n평가는 당일에만 수정 가능합니다", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "네", style: .default) { UIAlertAction in
+        let alert = UIAlertController(title: "", message: NSLocalizedString("Would you like to evaluate? Evaluations can only be edited on the same day", comment: ""), preferredStyle: .alert)
+        let okButton = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .default) { UIAlertAction in
             self.setValueOnDatebaseNo()
             self.FaildoneAlert()
             
         }
-        let cancelButton = UIAlertAction(title: "아니요", style: .cancel)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .cancel)
         alert.addAction(cancelButton)
         alert.addAction(okButton)
         present(alert, animated: true)
@@ -260,8 +266,8 @@ class CalendarViewController: UIViewController {
     
     func SuccessdoneAlert()->() {
         
-        let alert = UIAlertController(title: "평가 완료", message: "평가가 완료되었습니다. 내일도 화이팅 !", preferredStyle: .actionSheet)
-        let cancelbutton = UIAlertAction(title: "확인", style: .cancel)
+        let alert = UIAlertController(title: NSLocalizedString("Done", comment: ""), message: NSLocalizedString("Well done today", comment: ""), preferredStyle: .alert)
+        let cancelbutton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel)
         alert.addAction(cancelbutton)
         present(alert, animated: true)
         calendar.reloadData()
@@ -269,8 +275,8 @@ class CalendarViewController: UIViewController {
     
     func FaildoneAlert()->() {
         
-        let alert = UIAlertController(title: "평가 완료", message: "평가가 완료되었습니다. 아쉽지만 내일은 달성해봅시다 !", preferredStyle: .actionSheet)
-        let cancelbutton = UIAlertAction(title: "확인", style: .cancel)
+        let alert = UIAlertController(title: NSLocalizedString("Done", comment: ""), message: NSLocalizedString("Let's achieve it tomorrow!", comment: ""), preferredStyle: .alert)
+        let cancelbutton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel)
         alert.addAction(cancelbutton)
         present(alert, animated: true)
         calendar.reloadData()
@@ -301,10 +307,10 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
         let dateString = dateFormatter.string(from: date)
         
         if let success = successDict[dateString], success == "O" {
-            return "성공"
+            return NSLocalizedString("O", comment: "")
         } else if let success = successDict[dateString], success == "X" {
             // 실패한 경우
-            return "실패"
+            return NSLocalizedString("X", comment: "")
         }
         
         return nil

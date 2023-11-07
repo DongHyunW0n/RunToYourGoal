@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class ReportViewController: UIViewController {
     
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var label: UILabel!
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
 
          self.view.endEditing(true)
@@ -26,6 +28,10 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        label.text = NSLocalizedString("Send a feedback", comment: "")
+        
+        
+        
        }
     
 
@@ -39,8 +45,8 @@ class ReportViewController: UIViewController {
     
     func doneAlert()->() {
         
-        let alert = UIAlertController(title: "전송 완료", message: "피드백 감사드립니다!", preferredStyle: .actionSheet)
-        let cancelbutton = UIAlertAction(title: "완료", style: .cancel) { UIAlertAction in
+        let alert = UIAlertController(title: NSLocalizedString("Done", comment: ""), message: NSLocalizedString("Thanks for your feedback!", comment: ""), preferredStyle: .actionSheet)
+        let cancelbutton = UIAlertAction(title: "OK", style: .cancel) { UIAlertAction in
             
             self.dismiss(animated: true)
             

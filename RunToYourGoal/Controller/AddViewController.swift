@@ -38,7 +38,7 @@ class AddViewController: UIViewController {
         configureUI()
         
         //목표가 유효한지 먼저 확인
-        let goalValid = goalTextField.rx.text.orEmpty.map { $0.count >= 2 && $0.count <= 15}.share(replay: 1)
+        let goalValid = goalTextField.rx.text.orEmpty.map { $0.count >= 2 && $0.count <= 28}.share(replay: 1)
         
         goalValid.bind(to: statusLabel.rx.isHidden) //goalValid가 true일때 statusLabel 이 hidden. false일때 출력됨.
             .disposed(by: disposeBag)
@@ -64,7 +64,7 @@ class AddViewController: UIViewController {
     
     
     func setTItleLabel() {
-        titleLabel.text = NSLocalizedString("목표를 입력해보세요", comment: "")
+        titleLabel.text = NSLocalizedString("Set your daily habit", comment: "")
         titleLabel.font = UIFont(name: "SOYO Maple Bold", size: 25)
         titleLabel.textAlignment = .center
         view.addSubview(titleLabel)
@@ -84,7 +84,7 @@ class AddViewController: UIViewController {
     
     func setGoalTextField(){
         
-        goalTextField.placeholder = "예시)매일매일 물 2L 마시기"
+        goalTextField.placeholder = NSLocalizedString("Go to gym everyday", comment: "")
         goalTextField.font = UIFont(name: "SOYO Maple Regular", size: 20)
         goalTextField.layer.borderWidth = 0.5
         view.addSubview(goalTextField)
@@ -102,7 +102,7 @@ class AddViewController: UIViewController {
     }
     
     func setStatusLabel(){
-        statusLabel.text = "목표의 길이를 확인해주세요"
+        statusLabel.text = NSLocalizedString("Please check your goal Length", comment: "")
         statusLabel.textColor = .red
         statusLabel.textAlignment = .center
         statusLabel.font = UIFont(name: "SOYO Maple Regular", size: 15)
@@ -128,8 +128,8 @@ class AddViewController: UIViewController {
     func setSaveButton() {
         
         saveButton.backgroundColor = .systemBlue
-        saveButton.setTitle("입력 대기중", for: .disabled)
-        saveButton.setTitle("추가하기", for: .normal)
+        saveButton.setTitle(NSLocalizedString("Waiting for input", comment: ""), for: .disabled)
+        saveButton.setTitle(NSLocalizedString("Add", comment: ""), for: .normal)
 
         saveButton.titleLabel?.font = UIFont(name: "SOYO Maple Regular", size: 20)
         saveButton.addTarget(self, action: #selector(SaveButtonTabbed), for: .touchUpInside)
@@ -167,12 +167,12 @@ class AddViewController: UIViewController {
     
     func alertAfterTabbedSave() {
         
-        let alertController = UIAlertController(title: "확인", message: "추가 하시겠습니까?", preferredStyle: .alert)
-        let save = UIAlertAction(title: "저장", style: .default) { UIAlertAction in
+        let alertController = UIAlertController(title: "", message: NSLocalizedString("Would you like to add?", comment: ""), preferredStyle: .alert)
+        let save = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .default) { UIAlertAction in
             self.saveDataOnServer()
             self.finalAlert()
         }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let cancel = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .cancel)
         alertController.addAction(save)
         alertController.addAction(cancel)
         
@@ -181,9 +181,9 @@ class AddViewController: UIViewController {
     }
     func finalAlert(){
         
-        let alertController = UIAlertController(title: "완료", message: "추가되었습니다", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "", message: NSLocalizedString("Done", comment: ""), preferredStyle: .alert)
         
-        let okbutton = UIAlertAction(title: "확인", style: .cancel) { UIAlertAction in
+        let okbutton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel) { UIAlertAction in
             
             self.dismiss(animated: true)
         }

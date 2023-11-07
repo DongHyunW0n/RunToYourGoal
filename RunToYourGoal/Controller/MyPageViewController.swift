@@ -28,7 +28,7 @@ class MyPageViewController : UIViewController{
         super.viewDidLoad()
         
         let versionLabel : UILabel = {
-           
+            
             let label = UILabel()
             label.text =  "ver 1.0"
             label.font = UIFont(name: "SOYO Maple regular", size: 15)
@@ -39,7 +39,7 @@ class MyPageViewController : UIViewController{
             
             return label
         }()
-
+        
         
         let nickNameLabel : UILabel = {
             
@@ -58,7 +58,7 @@ class MyPageViewController : UIViewController{
         }()
         
         view.backgroundColor = backgroundColor
-
+        
         navigationController?.navigationBar.tintColor = .black
         
         
@@ -66,12 +66,12 @@ class MyPageViewController : UIViewController{
             
             let button = UIButton()
             
-            let buttonTitle = NSLocalizedString("개발자에게 건의하기", comment: "")
+            let buttonTitle = NSLocalizedString("Send a feedback", comment: "")
             button.setTitle(buttonTitle, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             button.titleLabel?.textColor = UIColor.black
             button.addTarget(self, action: #selector(reportButtonTab), for : .touchUpInside)
-            button.backgroundColor = .red
+            button.backgroundColor = .green
             button.layer.cornerRadius = 5
             
             
@@ -82,30 +82,45 @@ class MyPageViewController : UIViewController{
         let logoutButton : UIButton = {
             
             let button = UIButton()
-            button.setTitle("로그아웃", for: .normal)
+            button.setTitle(NSLocalizedString("Log out", comment: ""), for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             button.titleLabel?.textColor = UIColor.black
             button.addTarget(self, action: #selector(logoutButtontab), for : .touchUpInside)
-            button.backgroundColor = .green
+            button.backgroundColor = .blue
             button.layer.cornerRadius = 5
             
             
             return button
         }()
         
-//        topStackView.addArrangedSubview(nickNameTitle)
-//        topStackView.addArrangedSubview(nickNameLabel)
+        let outButton : UIButton = {
+            
+            let button = UIButton()
+            button.setTitle(NSLocalizedString("Delete Account", comment: ""), for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            button.titleLabel?.textColor = UIColor.black
+            button.addTarget(self, action: #selector(deletebuttonTabbed), for : .touchUpInside)
+            button.backgroundColor = .red
+            button.layer.cornerRadius = 5
+            
+            
+            return button
+        }()
+        
+        //        topStackView.addArrangedSubview(nickNameTitle)
+        //        topStackView.addArrangedSubview(nickNameLabel)
         
         view.addSubview(nickNameLabel)
         view.addSubview(logoutButton)
         view.addSubview(reportButton)
         view.addSubview(versionLabel)
+        view.addSubview(outButton)
         
         
         
-
+        
         nickNameLabel.snp.makeConstraints { make in
-
+            
             make.top.equalToSuperview().offset(120)
             make.leading.trailing.equalToSuperview().inset(20)
             
@@ -117,7 +132,7 @@ class MyPageViewController : UIViewController{
             
             make.leading.trailing.equalToSuperview().inset(120)
             
-
+            
         }
         
         reportButton.snp.makeConstraints { make in
@@ -126,15 +141,21 @@ class MyPageViewController : UIViewController{
             make.leading.trailing.equalToSuperview().inset(120)
             
         }
+        outButton.snp.makeConstraints { make in
+            
+            make.top.equalTo(reportButton.snp.bottom).offset(30)
+            make.leading.trailing.equalToSuperview().inset(120)
+        }
         versionLabel.snp.makeConstraints { make in
             
             make.bottom.equalTo(view.snp.bottom).inset(20)
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
-        self.title = "내 정보"
+        
+        
         print("uid is \(Auth.auth().currentUser?.uid ?? "UID")")
-
+        
         
         let currentUID = Auth.auth().currentUser?.uid
         let userRef = ref.child("가입자 리스트").child("\(currentUID ?? "UID")")
@@ -147,11 +168,11 @@ class MyPageViewController : UIViewController{
             }
         }
         
-
-     
         
         
-
+        
+        
+        
         
     }
     
@@ -167,16 +188,16 @@ class MyPageViewController : UIViewController{
             print("로그아웃 성공")
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
+            
             let firstVC = storyboard.instantiateViewController(identifier: "SplashViewController")
-
-               // 탐색 컨트롤러 초기화 및 루트 뷰 컨트롤러 설정
-               let navController = UINavigationController(rootViewController: firstVC)
-
-               // 애니메이션 효과 없이 Fullscreen으로 표시
-               navController.modalPresentationStyle = .fullScreen
-               self.present(navController, animated: false, completion: nil)
-
+            
+            // 탐색 컨트롤러 초기화 및 루트 뷰 컨트롤러 설정
+            let navController = UINavigationController(rootViewController: firstVC)
+            
+            // 애니메이션 효과 없이 Fullscreen으로 표시
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: false, completion: nil)
+            
             
         }catch let sighOutError as NSError{
             
@@ -184,7 +205,7 @@ class MyPageViewController : UIViewController{
             
         }
         
-
+        
     }
     
     @objc func reportButtonTab() {
@@ -193,18 +214,83 @@ class MyPageViewController : UIViewController{
         
         noticeAlert()
         
-    
         
         
-
+        
+        
         
         
     }
     
+    @objc func deletebuttonTabbed() {
+        
+        let user = Auth.auth().currentUser
+        
+        if let user = user {
+            
+            let alert = UIAlertController(title: NSLocalizedString("WARNING", comment: ""), message: NSLocalizedString("Are you sure?", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .destructive, handler: { UIAlertAction in
+                
+                
+                user.delete {error in
+                    
+                    if let error = error {
+                        
+                        print("계정 삭제 실패: \(error.localizedDescription)")
+                        self.showFailAlert(message: error.localizedDescription)
+
+                    }else{
+                        
+                        print("계정 삭제 성공")
+                        self.backToFirstPage()
+                    }
+                    
+                    
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+
+        }
+    }
+    
+    
+    func showFailAlert( message : String ){
+        let alert = UIAlertController(title: NSLocalizedString("Fail", comment: ""), message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .cancel) { UIAlertAction in
+            
+        }
+    
+        alert.addAction(ok)
+        
+        self.present(alert, animated: true)
+        
+        
+    }
+    
+    
+    
+    func backToFirstPage() {
+        
+        let myNaviController = self.navigationController
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let firstViewController = storyboard.instantiateViewController(withIdentifier: "FIrstViewController") as? FIrstViewController {
+            print("탈퇴 처리 완료. 첫 화면으로")
+            
+            self.navigationController?.setViewControllers([firstViewController], animated: true)
+            
+            
+        }
+        
+        
+    }
     func noticeAlert() {
         
-        let alert = UIAlertController(title: "안내", message: "답변을 받으시려면 이메일 주소를 적어주세요!", preferredStyle: .alert)
-        let okbutton = UIAlertAction(title: "확인", style: .cancel) { UIAlertAction in
+        let alert = UIAlertController(title: "", message: NSLocalizedString("Please provide your email address to receive a response.", comment: ""), preferredStyle: .alert)
+        let okbutton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel) { UIAlertAction in
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let reportView = storyboard.instantiateViewController(identifier: "ReportViewController")
@@ -213,11 +299,11 @@ class MyPageViewController : UIViewController{
         }
         alert.addAction(okbutton)
         self.present(alert, animated: true)
-  
-        }
+        
     }
-
     
+    
+}
     
 
 

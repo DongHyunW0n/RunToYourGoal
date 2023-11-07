@@ -42,7 +42,7 @@ class MainListViewController: UIViewController {
         fetchFirebaseDateData()
         fetchFirebaseGoalData()
 
-        self.title = "일일 목표 리스트"
+        self.title = NSLocalizedString("Daily habit list", comment: "")
         self.navigationItem.hidesBackButton = true
         self.showDefaultInformation()
         tableView.dataSource = self
@@ -147,7 +147,7 @@ extension MainListViewController : UITableViewDataSource {
             cell.dateLabel.text = "오늘부터 시작 !"
         } else {
             cell.goalLabel.text = goalList[indexPath.row]
-            cell.dateLabel.text = "\(dateList[indexPath.row]) 등록"
+//            cell.dateLabel.text = "\(dateList[indexPath.row])"+"\(NSLocalizedString(" start", comment: ""))"
         }
 
         cell.selectionStyle = .none
@@ -182,11 +182,11 @@ extension MainListViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alert = UIAlertController(title: "삭제 확인", message: "정말로 이 목표를 삭제하시겠습니까? \n 삭제한 목표는 복구할 수 없습니다.", preferredStyle: .alert)
-            let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] _ in
+            let alert = UIAlertController(title: "", message: NSLocalizedString("Are you sure you want to delete this goal? Deleted goals cannot be recovered.", comment: ""), preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .destructive) { [weak self] _ in
                 self?.deleteGoalFromFirebase(at: indexPath)
             }
-            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .cancel)
             
             alert.addAction(deleteAction)
             alert.addAction(cancelAction)
