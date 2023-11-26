@@ -41,9 +41,9 @@ class SplashViewController: UIViewController {
         } else if Auth.auth().currentUser != nil {
             print("과거에 이미 실행 , 이미 로그인 되어있음.")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let mainListViewController = storyboard.instantiateViewController(identifier: "MainListViewController") as? MainListViewController {
+            if let TabBarController = storyboard.instantiateViewController(identifier: "TabBarController") as? TabBarController {
 
-                self.navigationController?.setViewControllers([mainListViewController], animated: true)
+                self.present(TabBarController, animated: true)
             }
         } else {
             print("과거에 이미 실행, 로그인 되어있지 않음.")

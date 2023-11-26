@@ -39,6 +39,7 @@
 		8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */; };
 		8FE1D11E2A9B311900582D66 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE1D11D2A9B311900582D66 /* RxCocoa */; };
 		8FE1D1202A9B311900582D66 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8FE1D11F2A9B311900582D66 /* RxSwift */; };
+		8FE6A4442B139DFC00FC9968 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE6A4432B139DFC00FC9968 /* TabBarController.swift */; };
 		E22024E969F271C947A9414F /* Pods_RunToYourGoal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE854079F43218A6CA41074 /* Pods_RunToYourGoal.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		8FCD50C52AF1788100C00221 /* MainListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListCell.xib; sourceTree = "<group>"; };
 		8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrstViewController.swift; sourceTree = "<group>"; };
 		8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		8FE6A4432B139DFC00FC9968 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A7526BAC5F78F703EA5E87A1 /* Pods-RunToYourGoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunToYourGoal.debug.xcconfig"; path = "Target Support Files/Pods-RunToYourGoal/Pods-RunToYourGoal.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE854079F43218A6CA41074 /* Pods_RunToYourGoal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunToYourGoal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 				8F6A44682AF343270068ADA6 /* AddViewController.swift */,
 				8F795CAD2AF7E4C100080D74 /* OnBoardingFirstViewController.swift */,
 				8F795CAF2AF7E60400080D74 /* OnBoardingFinalViewController.swift */,
+				8FE6A4432B139DFC00FC9968 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				8FE1D10E2A9B246B00582D66 /* JoinViewController.swift in Sources */,
 				8FCD50C62AF1788100C00221 /* MainListCell.swift in Sources */,
 				8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */,
+				8FE6A4442B139DFC00FC9968 /* TabBarController.swift in Sources */,
 				8F9F35E82AF0102F00ADB101 /* SplashViewController.swift in Sources */,
 				8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */,
 				8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */,

@@ -175,15 +175,11 @@ class JoinViewController: UIViewController {
                 ref.child("가입자 리스트").child("\(user.uid)").setValue(["닉네임" : nickName])
                 print("리얼타임 데이터베이스에 가입자 목록 추가 완료")
                 
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                
-                guard let mainVC = storyboard.instantiateViewController(identifier: "MainListViewController") as? MainListViewController else{return}
-                mainVC.userID = user.uid
-                
-                
-        
-                self.navigationController?.pushViewController(mainVC, animated: true)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let TabBarController = storyboard.instantiateViewController(identifier: "TabBarController") as? TabBarController {
+
+                    self.present(TabBarController, animated: true)
+                }
 
                 
                 

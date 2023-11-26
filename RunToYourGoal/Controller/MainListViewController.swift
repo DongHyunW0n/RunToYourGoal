@@ -42,7 +42,7 @@ class MainListViewController: UIViewController {
         fetchFirebaseDateData()
         fetchFirebaseGoalData()
 
-        self.title = NSLocalizedString("Daily habit list", comment: "")
+//        self.title = NSLocalizedString("Daily habit list", comment: "")
         self.navigationItem.hidesBackButton = true
         self.showDefaultInformation()
         tableView.dataSource = self

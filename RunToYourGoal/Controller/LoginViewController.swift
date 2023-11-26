@@ -114,9 +114,10 @@ class LoginViewController: UIViewController {
     
     func moveToMainView(uid: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainListViewController = storyboard.instantiateViewController(identifier: "MainListViewController") as! MainListViewController
-        mainListViewController.userID = uid
-        self.navigationController?.pushViewController(mainListViewController, animated: true)
+        if let TabBarController = storyboard.instantiateViewController(identifier: "TabBarController") as? TabBarController {
+
+            self.present(TabBarController, animated: true)
+        }
         print("메인 화면으로 이동합니다.")
     }
 }
