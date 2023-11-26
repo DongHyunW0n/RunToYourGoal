@@ -412,11 +412,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iqt-p4-2OC">
-                                <rect key="frame" x="20" y="80" width="335" height="538"/>
+                                <rect key="frame" x="20" y="80" width="335" height="489"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUu-dU-MOk">
-                                <rect key="frame" x="35" y="618" width="305" height="110"/>
+                                <rect key="frame" x="35" y="569" width="305" height="110"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="addgoalbutton"/>
                                 <connections>
@@ -441,13 +441,14 @@
                             <constraint firstItem="rrj-dO-eje" firstAttribute="trailing" secondItem="iqt-p4-2OC" secondAttribute="trailing" constant="20" id="ze9-dq-dJ9"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="LsP-9j-p8w"/>
                     <connections>
                         <outlet property="tableView" destination="iqt-p4-2OC" id="k5n-53-C2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tV8-sc-ruc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="-36"/>
+            <point key="canvasLocation" x="1418" y="-27"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="RJK-ms-m3u">
@@ -645,6 +646,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7z-Vs-tyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1254" y="691"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jNp-eO-qRV">
+            <objects>
+                <tabBarController storyboardIdentifier="Tabbar" automaticallyAdjustsScrollViewInsets="NO" id="uZG-N7-xNK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Ls-KL-Tub">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ghK-Gq-FDy" kind="relationship" relationship="viewControllers" id="U7T-i3-LIv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgA-ET-sut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="-27"/>
         </scene>
     </scenes>
     <resources>
