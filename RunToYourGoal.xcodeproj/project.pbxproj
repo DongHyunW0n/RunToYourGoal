@@ -19,6 +19,7 @@
 		8F38ADB42A894B8D003125F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F38ADB32A894B8D003125F6 /* Assets.xcassets */; };
 		8F38ADB72A894B8D003125F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F38ADB52A894B8D003125F6 /* LaunchScreen.storyboard */; };
 		8F4ACF5A2AE02873000A4BBE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4ACF592AE02873000A4BBE /* SnapKit */; };
+		8F5C35E12B14D4E1009ADB5A /* LostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5C35E02B14D4E1009ADB5A /* LostViewController.swift */; };
 		8F6A44692AF343270068ADA6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6A44682AF343270068ADA6 /* AddViewController.swift */; };
 		8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */; };
 		8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */; };
@@ -55,6 +56,7 @@
 		8F38ADB32A894B8D003125F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F38ADB62A894B8D003125F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F38ADB82A894B8D003125F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F5C35E02B14D4E1009ADB5A /* LostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostViewController.swift; sourceTree = "<group>"; };
 		8F6A44682AF343270068ADA6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		8F6CBE892AEBD55200566EE4 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		8F6CBE8B2AEBFE8F00566EE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE1D10B2A9B243300582D66 /* FIrstViewController.swift */,
+				8F5C35E02B14D4E1009ADB5A /* LostViewController.swift */,
 				8FE1D10D2A9B246B00582D66 /* JoinViewController.swift */,
 				8F11EAFF2A9C990D0065CD08 /* LoginViewController.swift */,
 				8F7265272AB1EF3E00662ED6 /* MainListViewController.swift */,
@@ -344,6 +347,7 @@
 				8F7265282AB1EF3E00662ED6 /* MainListViewController.swift in Sources */,
 				8FE6A4442B139DFC00FC9968 /* TabBarController.swift in Sources */,
 				8F9F35E82AF0102F00ADB101 /* SplashViewController.swift in Sources */,
+				8F5C35E12B14D4E1009ADB5A /* LostViewController.swift in Sources */,
 				8F6CBE8C2AEBFE8F00566EE4 /* ReportViewController.swift in Sources */,
 				8F6CBE8A2AEBD55200566EE4 /* MyPageViewController.swift in Sources */,
 				8F11EB002A9C990D0065CD08 /* LoginViewController.swift in Sources */,
