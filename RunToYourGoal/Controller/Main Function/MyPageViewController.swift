@@ -273,17 +273,16 @@ class MyPageViewController : UIViewController{
     
     func backToFirstPage() {
         
-        let myNaviController = self.navigationController
-        
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let firstViewController = storyboard.instantiateViewController(withIdentifier: "FIrstViewController") as? FIrstViewController {
-            print("탈퇴 처리 완료. 첫 화면으로")
-            
-            self.navigationController?.setViewControllers([firstViewController], animated: true)
-            
-            
-        }
+        
+        let firstVC = storyboard.instantiateViewController(identifier: "SplashViewController")
+        
+        // 탐색 컨트롤러 초기화 및 루트 뷰 컨트롤러 설정
+        let navController = UINavigationController(rootViewController: firstVC)
+        
+        // 애니메이션 효과 없이 Fullscreen으로 표시
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: false, completion: nil)
         
         
     }

@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
         let myNaviController = self.navigationController
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() , execute: {
             self.handlingAuthCheckUser()
         })
     }
